@@ -16,8 +16,9 @@
       <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
 	    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
       <link href="https://fonts.googleapis.com/css?family=Poiret+One|Ubuntu" rel="stylesheet">  
-      <link rel="stylesheet" type="text/css" media="screen" href="style.css">
       
+      <link rel="stylesheet" type="text/css" href="stylesheets/style.css" media="screen">
+      <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
       <script type="text/javascript" src="script.js"></script>
        
    </head>
@@ -40,6 +41,7 @@
                   <md-tab-label>About<!--{{data.secondLabel}}--></md-tab-label>
                   <md-tab-body>
                     <p style="text-align:center;"><img class="photo" src="pics/profile.png"/></p>
+                    <div class= "container">
                     <p style="text-align:center;">
                            Hello World! My name is Henry Chiyang Wong. 
                       <br> I am currently a Undergraduate at Missouri University of Science and Technology
@@ -47,6 +49,7 @@
                       <br> I am studying Computer Science.
                       <br> My current aspirations lie in Data Science and Machine Learning.
                     </p>
+                    </div>
                   </md-tab-body>
                </md-tab>
                <!-- Tab3 -->
@@ -64,7 +67,20 @@
                       <div class="container">
                       <h1><b>CS1001: Data Structures Lab</b></h1>
                       <h3>Missouri Univesrity of Science and Technology</h3>
-                      <p>Hello Madison</p>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="container">
+                        <h1><b>CS1510: Data Structures</b></h1>
+                        <h3>Missouri University of Science and Technology</h3>
+                        <p>Learned how to write Data Structures in C++ (i.e Pointers, Linked Lists, Array Lists, Hash Tables, Binary Search Trees, Stacks, Queues, Graphs, Maps)</p>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="container">
+                        <h1><b>Discrete Mathmatics</b></h1>
+                        <h3>Missouri University of Science and Technology</h3>
+                        <p>Graphs, Eulers Circuits, Mathmatical Induction and more with Computer Science Applications</p>
                       </div>
                     </div>
                     <div class="card">
@@ -90,14 +106,19 @@
                  <md-tab-label>Projects</md-tab-label>
                  <md-tab-body >
                    <h1>Current</h1>
-                     <h3>Titanic: Machine Learning from Disaster</h3>
-                     <a href="https://www.kaggle.com/c/titanic">
-                       <img src="pics/titanic.jpg"/>
+                     <h3> Missouri S&T SIG-Game</h3>
+                     <a href="http://siggame.io/">
+                       <img style="height:250px;width:auto" src="pics/megaminer.png"/>
                      </a>
                    <h1>Previous</h1>
                      <h3>Max's Miles Foundation</h3>
-                       <a href="http://www.maxsmilesfoundation.org/">
+                     <a href="http://www.maxsmilesfoundation.org/">
                        <img style="height:250px;width:auto" src="pics/maxsMiles.jpg  "/>
+                     </a>
+                     
+                    <h3>Titanic: Machine Learning from Disaster</h3>
+                     <a href="https://www.kaggle.com/c/titanic">
+                       <img src="pics/titanic.jpg"/>
                      </a>
                  </md-tab-body>
                </md-tab>
@@ -110,6 +131,7 @@
             </md-tabs>
          </md-content>
       </div>
+      
       <div id="footer">
         <table>
         <tbody>

@@ -12,7 +12,8 @@
 }
 body
 {
-   background-color: #a7a7a7;
+   /*background-color: #a7a7a7;*/
+   background-image:url("../pics/background.jpg");
    margin: 0px;
    height: 100%;
    width: 100%;
@@ -33,7 +34,7 @@ body
 .tabsDynamicHeight md-content 
 {
   background-color: transparent !important;
-  color: white;
+  color: black;
 }
 .tabsDynamicHeight md-content md-tabs
 {
