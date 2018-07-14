@@ -10,19 +10,31 @@
 {
   font-family: 'Poiret One', cursive;
 }
+
+#aboutTitle
+{
+  text-align: center;
+  color: white;
+  font-size: 50px;
+}
+
 body
 {
-   /*background-color: #a7a7a7;*/
-   background-image:url("../pics/background.jpg");
-   margin: 0px;
-   height: 100%;
-   width: 100%;
+   background-color: #c4c2c2;
    font-family: 'Ubuntu', sans-serif;
 }
 
 .title
 {
   text-align: center;
+  left: 0;
+  line-height: 200px;
+  margin: auto;
+  margin-top: -100px;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  color: white;
 }
 .profile
 {
@@ -31,24 +43,7 @@ body
   align=right;
   padding-right: 10em;
 }
-.tabsDynamicHeight md-content 
-{
-  background-color: transparent !important;
-  color: black;
-}
-.tabsDynamicHeight md-content md-tabs
-{
-  background-color: transparent !important;
-  
-}
-.tabsDynamicHeight md-content md-tabs md-tabs-wrapper 
-{
-  background: #dd0000;
-}
-.tabsDynamicHeight md-content h1:first-child
-{
-  margin-top: 0; 
-}
+
 
 /* Card */
 .card 
@@ -74,7 +69,7 @@ body
     transition: 0.3s;
 	margin: 0 auto;
 	background: white;
-	border-radius: 25px;
+	
 }
 
 .photo
@@ -166,19 +161,45 @@ body
     border-radius:30px;
 }
 
-table.table_main td 
-{
-  padding: 20px;
+/* for the projects page */
+.container {
+    position: relative;
+    width: 50%;
+    margin-top:3em;
 }
 
-table.content td 
-{
-  padding: 10px;
-  width: 400px;
-  color: white;
+.projectImage {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
 }
 
-table td 
-{
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   text-align: center;
+}
+
+
+.text {
+  /*background-color: #4CAF50;*/
+  color: black;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+.container:hover .projectImage {
+  opacity: 0.1;
+}
+
+.container:hover .middle {
+  opacity: 1;
 }

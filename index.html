@@ -1,147 +1,54 @@
-<DOCTYPE! html>
-<html lang="en" >
-   <head>
-      <!-- Bootstrap -->
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-      <!-- AngularJS Materials -->
-      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
-	    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-      <link href="https://fonts.googleapis.com/css?family=Poiret+One|Ubuntu" rel="stylesheet">  
-      
-      <link rel="stylesheet" type="text/css" href="stylesheets/style.css" media="screen">
-      <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-      <script type="text/javascript" src="script.js"></script>
-       
-   </head>
-   <body ng-app="myWeb" > 
-      <title>Henry C. Wong</title>
-      <div class="tabsDynamicHeight" id="tabContainer" ng-controller="tabController as ctrl" ng-cloak>
-         <md-content layout-fill class="md-padding">
-            <md-tabs md-dynamic-height class="md-accent" md-selected="data.selectedIndex" md-align-tabs="{{data.bottom ? 'bottom' : 'top'}} " >
-               <!-- Tab 1 -->
-               <md-tab id="tab1">
-                  <md-tab-label>Home</md-tab-label>
-                  <md-tab-body>
-                    <h2 class="title"> [Welcome to My Site] </h2>
-                    <h3 class="title"> Feel Free to Look Around and Discover more about me! </h3>
-                    <img class="frontPhoto" src="pics/stateFarm.jpg"/>
-                  </md-tab-body>
-               </md-tab>
-               <!-- Tab2 -->
-               <md-tab id="tab2" <!--ng-disabled="data.secondLocked"-->>
-                  <md-tab-label>About<!--{{data.secondLabel}}--></md-tab-label>
-                  <md-tab-body>
-                    <p style="text-align:center;"><img class="photo" src="pics/profile.png"/></p>
-                    <div class= "card">
-                    <p style="text-align:center;">
-                           Hello World! My name is Henry Chiyang Wong. 
-                      <br> I am currently a Undergraduate at Missouri University of Science and Technology
-                      <br>(formerly University of Missouri - Rolla)
-                      <br> I am studying Computer Science.
-                      <br> My current aspirations lie in Machine Learning, Cyber Security, and Data Science.
-                    </p>
-                    </div>
-                  </md-tab-body>
-               </md-tab>
-               <!-- Tab3 -->
-               <md-tab id="tab3">
-                  <md-tab-label>Courses</md-tab-label>
-                  <md-tab-body>
-                    <div class="card">
-                      <div class="container">
-                        <h1><b>CS1570:Introduction to Programming</b></h1>
-                        <h3>Missouri Univesrity of Science and Technology</h3>
-                        <p>Basic C++ Programs covering file input and output, proper documentation, classes, structs, if-else statements, data types, 2 dimmensional arrays, loops, operators, overloading, and sorting algorthims.</p>
-                      </div>
-                    </div>
-                    <div class="card">
-                      <div class="container">
-                      <h1><b>CS1001: Data Structures Lab</b></h1>
-                      <h3>Missouri Univesrity of Science and Technology</h3>
-                      </div>
-                    </div>
-                    <div class="card">
-                      <div class="container">
-                        <h1><b>CS1510: Data Structures</b></h1>
-                        <h3>Missouri University of Science and Technology</h3>
-                        <p>Learned how to write Data Structures in C++ (i.e Pointers, Linked Lists, Array Lists, Hash Tables, Binary Search Trees, Stacks, Queues, Graphs, Maps)</p>
-                      </div>
-                    </div>
-                    <div class="card">
-                      <div class="container">
-                        <h1><b>Discrete Mathmatics</b></h1>
-                        <h3>Missouri University of Science and Technology</h3>
-                        <p>Graphs, Eulers Circuits, Mathmatical Induction and more with Computer Science Applications</p>
-                      </div>
-                    </div>
-                    <div class="card">
-                      <div class="container">
-                        <h1><b>Inferential Statistics</b></h1>
-                        <h3>Udacity</h3c>
-                      </div>
-                    </div>
-                  </md-tab-body>
-               </md-tab>
-               <!-- Tab4 -->
-               <md-tab>
-                 <md-tab-label>Photography</md-tab-label>
-                 <md-tab-body>
-                   <a href="https://www.flickr.com/photos/cywongx1">
-                     <img class="photo" src="pics/photo.jpg"/>
-                   </a>
-				   <div class= "card">
-                   <h3 style="text-align:center;">I post all of my photos on flickr so feel free to click on the photo above! As you see, I really like food.</h3>
-				   </div>
-                 </md-tab-body>
-               </md-tab>
-               <!-- Tab5 -->
-               <md-tab>
-                 <md-tab-label>Projects</md-tab-label>
-                 <md-tab-body >
-                   <h1>Current</h1>
-                     <div class= "card">
-                       <h3>  Missouri S&T SIG-Game</h3>
-                     
-					 <a href="http://siggame.io/">
-                       <img style="height:250px;width:auto" src="pics/megaminer.png"/>
-                     </a>
-					 </div>
-                   <h1>Previous</h1>
-				     <div class= "card">
-                       <h3>  Max's Miles Foundation</h3>
-				     
-                     <a href="http://www.maxsmilesfoundation.org/">
-                       <img style="height:250px;width:auto" src="pics/maxsMiles.jpg  "/>
-                     </a>
-                    </div>
-					<div class= "card">
-                      <h3>  Titanic: Machine Learning from Disaster</h3>
-					 <a href="https://www.kaggle.com/c/titanic">
-                       <img src="pics/titanic.jpg"/>
-                     </a>
-					 </div>
-                 </md-tab-body>
-               </md-tab>
-               <!-- Tab6 -->
-               <md-tab>
-                 <a href="documents/wongHenryResume.pdf">
-                   <md-tab-label>Resume</md-tab-label>
-                 </a>
-               </md-tab>
-            </md-tabs>
-         </md-content>
-      </div>
-      
-      <div id="footer">
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8"/>
+
+<head>
+   <title>Henry C. Wong</title>
+    <!-- Latest compiled and minified CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> 
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+</head>
+<body>
+ <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="index.html">HCW</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="about.html">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="projects.html">Projects and Work</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="resume.pdf">Resume</a>
+      </li>
+    </ul>
+  </div>
+</nav> 
+<h1 class="title" > [Welcome to my Site] </h1>
+
+
+
+<div id="footer">
         <table>
         <tbody>
           <tr>
@@ -166,5 +73,6 @@
         </tbody>
         </table>
       </div>
-   </body>
+  </div>
+</body>
 </html>
