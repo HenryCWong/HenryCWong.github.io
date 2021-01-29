@@ -151,6 +151,11 @@ body
   position:relative;
 }
 
+.social-media
+{
+  display: block;
+}
+
 .facebook:hover> .overlay, .googleplus:hover> .overlay, .instagram:hover> .overlay, .linkedin:hover> .overlay, .github:hover> .overlay, .twitch:hover> .overlay 
 {
     width:100%;
