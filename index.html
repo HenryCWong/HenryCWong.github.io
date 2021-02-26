@@ -1,81 +1,164 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<meta charset="utf-8"/>
 
+<!-- HEAD -->
 <head>
-   <title>Henry C. Wong</title>
-    <!-- Latest compiled and minified CSS -->
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <title>Henry Wong</title>
+    <link href="css/bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="css/stackicons-master/css/stackicons-social.css" rel="stylesheet" media="screen" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> 
-    
-    <link rel="stylesheet" type="text/css" href="stylesheets/style.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+
+    <link href="css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="css/sidebar.css" rel="stylesheet" type="text/css"/>
+    <script src="https://kit.fontawesome.com/3895ee5658.js" crossorigin="anonymous"></script>
+
 </head>
+
 <body>
- <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-  <!-- Brand -->
-  <a class="navbar-brand" href="index.html">HCW</a>
+    
+<div class="container">
+    
+    <div class="row profile">
+        
+        <div class="col-md-3">
+            <div class="profile-sidebar">
+                <!-- SIDEBAR USERPIC -->
+                <div class="profile-userpic">
+                    <img src="gallery/images/henry-wong.png" class="img-responsive" alt="">
+                </div>
+                <!-- END SIDEBAR USERPIC -->
 
-  <!-- Toggler/collapsibe Button -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+                <!-- SIDEBAR USER TITLE -->
+                <div class="profile-usertitle">
+                    <div class="profile-usertitle-name">
+                        Henry Wong
+                    </div>
+                    <div class="profile-usertitle-job">
+                        Masters Student <br>
+                        Missouri University of Science and Technology
+                    </div>
+                </div>
+                <!-- END SIDEBAR USER TITLE -->
 
-  <!-- Navbar links -->
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="about.html">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="projects.html">Projects and Work</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="resume.pdf">Resume</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="intro.html">CS 1570</a>
-      </li>
-    </ul>
-  </div>
-</nav> 
-<h1 class="title" > [Welcome to my Site] </h1>
+                <!-- SIDEBAR MENU -->
+                <div class="profile-usermenu">
+                    <ul class="nav">
+                        <li class="active">
+                            <a href="#">
+                            <i class="glyphicon glyphicon-home"></i>
+                            Home </a>
+                        </li>
+                        <li>
+                            <a href="research.html">
+                            <i class="fas fa-microscope"></i>
+                            Research </a>
+                        </li>
+                        <li>
+                            <a href="cv.html">
+                            <i class="glyphicon glyphicon-list-alt"></i>
+                            CV </a>
+                        </li>
+                        <li>
+                            <a href="https://scholar.google.com/citations?user=UXOVbH8AAAAJ">
+                            <i class="glyphicon glyphicon-education"></i>
+                            Google Scholar </a>
+                        </li>
+                        <li>
+                            <a href="https://www.researchgate.net/profile/Henry-Wong-4">
+                            <i class="fab fa-researchgate"></i>
+                            Research Gate </a>
+                        </li>
+          
+                        <li>
+                            <a href="teaching.html">
+                            <i class="fas fa-chalkboard"></i>
+                            Teaching </a>
+                        </li>
+                        <!--<li>
+                            <a href="misc.html">
+                            <i class="glyphicon glyphicon-glass"></i>
+                            Misc </a>
+                        </li>-->
+                    </ul>
+                </div>
+                <!-- END MENU -->
+            </div>
+        </div>
 
+        <div class="col-md-9">
+            
+            <div class="profile-content">
 
+                <h3>About Me</h3>
 
-<div id="footer">
-        <table>
-        <tbody>
-          <tr>
-            <td>
-              <div class="facebook" style="cursor: pointer;" onclick="window.location='https://www.facebook.com/thehenrywong'">
-                <div class="overlay"></div>
-              </div>
-            </td>
-            <td>
-              <div class="linkedin" style="cursor: pointer;" onclick="window.location='https://www.linkedin.com/in/henrycwong'">
-                <div class="overlay"></div>
-              </div>
-            </td>
-            <td>
-              <div class="github" style="cursor: pointer;" onclick="window.location='https://www.github.com/henrycwong'">
-              <div class="overlay"></div>
-            </td>
-            <td>
-              <h2 id="titleName">Henry C. Wong</h2>
-            </td>
-          </tr>
-        </tbody>
-        </table>
-      </div>
-  </div>
+                <p> Hi, my name is Henry Wong. I am a masters student at the Missouri University of Science and Technology in Rolla, MO. 
+                    I am currently a member of the SAINTS lab run by <a href="https://tluocs.github.io">Dr. Tony Luo</a> who also happens to be my advisor.
+                </p>
+                <br>
+                <p>
+                My current research interest lies in Federated Learning, Adversarial Machine Learning, and Cyber Security. Recently, I have found interest in Bioinformatics as well.
+                With Federated Learning I aim to target the intersection between Cyber Security, Machine Learning, and Internet-of-Things.
+                </p>
+                <br>
+                <p>
+                I completed my B.S in Computer Science at Missouri University of Science and Technology. I originally had offers and plans to go into industry until the 2020 pandemic hit.
+                It was then I decided to pursue the possibility of going into research as a career and subjected myself into my university's masters program to see if a Ph.D was in my future. 
+                </p>
+                <br>
+                <p>
+                During my undergraduate I was heavily involved in projects across campus. I worked on and led <a href="http://siggame.io">MegaMinerAI</a>, an AI competition, for multiple years,
+                heavily participated in <a href="https://ctftime.org/team/15342">Capture-the-Flag(CTF) competitions</a>, started the first ever hackathon at Missouri S&T, started the first ever
+                data oriented organization on campus called <a href="https://modata.blog">MoData</a>, and initiated the first Asian American Association at Missouri S&T. Outside of school I was briefly involved in Rolla government helping university related bills to be passed using data science. 
+ 
+                </p>
+
+                <h3> Contact </h3>
+                <p>
+                    <b> Email </b>: henrycwong [at] mst [dot] edu <br>
+                    <b> Physical </b>: ERL 306 <br>
+                </p>
+
+                <h3>Recent News</h3>
+                <ul id="news">
+                    <li><i>12/2020</i> Received a teaching effectiveness score of 3.60 (out of 4.00) in the official CET assessment on my first ever semester of teaching. </a>
+                    <li><i>08/2020</i> "Man-in-the-Middle Attacks on MQTT-based IoT Using BERT Based Adversarial Message Generation" was accepted ccepted to <b><a href="https://www.kdd.org/kdd2020/">KDD 2020</a></b> <a href="https://aiotworkshop.github.io/accepted-papers.html">(3rd AIoT workshop)</a>.
+                
+                    <!--<li><a href="oldnews.html">Older news</a></li>-->
+                </ul>
+
+                <h3>Happy to Connect!</h3>
+
+                <p class="col-sm-1" id="icon">
+                    <a title="Github" class="st-icon-github" href="https://github.com/henrycwong">Github</a>
+                </p>
+
+                <p class="col-sm-1" id="icon">
+                    <a title="Twitter" class="st-icon-twitter" href="https://twitter.com/henrycwong">Twitter</a>
+                </p>
+
+                <p class="col-sm-1" id="icon">
+                    <a title="LinkedIn" class="st-icon-linkedin" href="https://linkedin.com/in/henrycwong">LinkedIn</a>
+                </p>
+
+                <p class="col-sm-1" id="icon">
+                    <a title="Flickr" class="st-icon-flickr" href="https://www.flickr.com/people/cywongx">Flickr</a>
+                </p>
+
+                <div style="display: flex; justify-content: flex-end">
+                  <i>Last Updated: Feb 15, 2021 <br> Copyright &#169; Henry Wong</i>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
 </body>
+
 </html>
