@@ -1,0 +1,27 @@
+#news {
+    font-family: sans-serif;
+    font-size: 14px;   
+}
+
+#pubs {
+    font-family: sans-serif;
+    font-size: 14px;   
+}
+
+img.logo {
+    vertical-align: middle;
+    width: 80%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#icon {
+    padding: 0px;
+    font-size: 24px;
+}
+
+body {
+  padding-top: 20px;
+  font-family: sans-serif;
+  overflow-y: scroll;
+}
