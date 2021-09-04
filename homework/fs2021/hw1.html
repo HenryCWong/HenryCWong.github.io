@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+
+<!-- HEAD -->
+<head>
+
+
+    <title>Henry Wong's Page</title>
+    <link href="css/bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="css/stackicons-master/css/stackicons-social.css" rel="stylesheet" media="screen" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <link href="css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="css/sidebar.css" rel="stylesheet" type="text/css"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="gallery/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="gallery/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="gallery/images/favicon-16x16.png">
+    <link rel="shortcut icon" href="favicon.ico" />
+
+    <script src="https://kit.fontawesome.com/3895ee5658.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    
+<div class="container">
+    
+    <div class="row profile">
+        
+        <div class="col-md-3">
+            <div class="profile-sidebar">
+                <!-- SIDEBAR USERPIC -->
+                <div class="profile-userpic">
+                    <img src="gallery/images/henry-wong.png" class="img-responsive" alt="">
+                </div>
+                <!-- END SIDEBAR USERPIC -->
+
+                <!-- SIDEBAR USER TITLE -->
+                <div class="profile-usertitle">
+                    <div class="profile-usertitle-name">
+                        Henry Wong
+                    </div>
+                    <div class="profile-usertitle-job">
+                        Masters Student <br>
+                        Missouri University of Science and Technology
+                    </div>
+                </div>
+                <!-- END SIDEBAR USER TITLE -->
+
+                <!-- SIDEBAR MENU -->
+                <div class="profile-usermenu">
+                    <ul class="nav">
+                        <li>
+                            <a href="index.html">
+                            <i class="glyphicon glyphicon-home"></i>
+                            Home </a>
+                        </li>
+                        <li>
+                            <a href="research.html">
+                            <i class="fas fa-microscope"></i>
+                            Research </a>
+                        </li>
+                        <li>
+                            <a href="cv.html">
+                            <i class="glyphicon glyphicon-list-alt"></i>
+                            CV </a>
+                        </li>
+                        <li>
+                            <a href="https://scholar.google.com/citations?user=UXOVbH8AAAAJ">
+                            <i class="glyphicon glyphicon-education"></i>
+                            Google Scholar </a>
+                        </li>
+                        <li>
+                            <a href="https://www.researchgate.net/profile/Henry-Wong-4">
+                            <i class="fab fa-researchgate"></i>
+                            Research Gate </a>
+                        </li>
+                        <li class="active">
+                            <a href="teaching.html">
+                            <i class="fas fa-chalkboard"></i>
+                            Teaching </a>
+                        </li>
+                        <!--<li>
+                            <a href="misc.html">
+                            <i class="glyphicon glyphicon-glass"></i>
+                            Misc </a>
+                        </li>-->
+                    </ul>
+                </div>
+                <!-- END MENU -->
+            </div>
+        </div>
+
+        <div class="col-md-9">
+           
+            <div class="profile-content">
+            
+              <h3>Homework 1</h3>
+              <hr border-color="black">
+              
+              <h3>Background</h3>
+              <p>This world is inhabited by small, friendly creatures known as Poke-, sorry, Codémon (please don't sue us N1nt3nd0). A popular activity for the people (or “coaches”, as they will be referred to from here on out) of this universe is to wander around collecting as many of these Codémon as they can in pocket sized Codéballs, which function as small pocket dimensions. Due to reasons that definitely do not involve making them fight each other, sometimes these poor creatures become injured. When this happens, they will need to be taken to a Codécenter, which can be thought of as a hospital for Codémon. Up until now, these Codécenters charged no price for their healing services.</p>
+              <p>Codécenters have had it too good for too long. Codécenters are basically the “hospitals” of the Codémon universe, where coaches can give them Codéballs, and they used to heal the Codémon inside at no charge. Corporate greed has taken over the medical industry of the Codémon world, and they’ve decided to start charging exorbitant prices for their healthcare services. You have been hired to develop the software to calculate the prices that coaches must pay in order to heal their little buddies. </p>
+              <p>Here is how the pricing will breakdown: </p>
+              <h3> Tax Rate </h3>
+              <p>Each region has a different tax value. This tax value must be multiplied by the final price for the final calculation. The region will be the same for ALL customers, so you only need to get this information once for every time your program is run. The regions and tax rates are as follows:
+              <ol>
+                <li> Konta (100% price) </li>
+                <li> Jahta (80% price) </li>
+                <li> Hainn (95% price) </li>
+                <li> Sennah (115% price) </li>
+                <li> Ynavo (150% price) </li>
+                <li> Kolas (112% price) </li>
+                <li> Olalo (75% price) </li>
+                <li> Golor (250% price) </li>
+              </ol>
+                        
+            <h3> Insurance </h3>
+            <p> Once a region has been set, you must then be prepared to take in any number of coaches. Each coach may or may not have insurance. If the coach has insurance, their insurance rate should then be taken as input from the user as a value (that might have decimals!) between and including 0 and 100. Their final cost will eventually be divided by the insurance rate. Insurance in real life is a little bit more complicated, but let’s keep it simple, huh?</p>
+            
+            <h3> Cost </h3>
+            <p> Each coach can carry anywhere between 1 to 6 Codéballs with them that they need to get healed. This information must be taken as input from the user. Once you get this information, you will also need to find out what kind of Codéballs the coach is giving the Codécenter, as different balls have different rates. The rates are as follows: </p>
+            <ul>
+              <li> Codeball - $90 </li>
+              <li> Good Ball - $115 </li>
+              <li> Extreme Ball - $130 </li>
+              <li> Budget Ball - $50 </li>
+              <li> Boujee Ball - $350 </li>
+            </ul>
+           
+           <h3> Region Specific Law </h3>
+           <p>Certain regions have certain laws pertaining to what kind of Codéballs are allowed by coaches. Specifically, the budget ball is illegal to use if the coach lives in a region that ends with the letter ‘a’ or ‘o’, and also has a boujee ball in their possession. If you find someone to be breaking the law, inform them of the fact that they are going to be arrested immediately. You do not need to finish calculating their cost. Simply arrest the law-breaking coach, and move on to the next coach, if there are any.</p3>
+           
+           <h3> Conversion Rates </h3>
+           <p> Due to a very odd law passed in this universe recently, all calculations must be done using the dollar ($) currency, however, all output must be displayed using the ampersand (&) currency. To convert dollars to ampersands, you must multiply by 11/17 and then add 3.62. Round the final cost up to the nearest penny. Once the final price has been calculated, give the user the final price charged to the coach, and prompt the user to see if there are any more coaches in the Codécenter. If there are any, repeat this process. If there are no more, give us an exit message and terminate the program. </p>
+           
+           <h3> Things to remember </h3>
+           <ul>
+             <li>	Make sure to validate ALL of your user inputs. That means making sure they are the correct data types, as well as being within the correct ranges. We WILL try and stress test your code. </li>
+             <li>	You will need to use loops as well as conditionals in different parts of this program. Make sure you think about what kind of loops would be best in each situation. </li>
+             <li> You can use integers for user input, but make sure that when you prompt the user for input, they know what integers correspond to what (e.g. “What is your favorite color? 1 - Blue, 2 - Chartreuse, 3 - Other)</li>
+           </ul>
+           
+           
+         <h3> Submission Instructions </h3>
+         <p> Submit your assignment to you Githlab repo with your .cpp file. Your program should be able to be complied and executed on the university machines. If your program automatically fails, there will be a chance we won't even grade it. </p>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
