@@ -56,7 +56,7 @@
               </ol>
                         
             <h3> Insurance </h3>
-            <p> Once a region has been set, you must then be prepared to take in any number of coaches. Each coach may or may not have insurance. If the coach has insurance, their insurance rate should then be taken as input from the user as a value (that might have decimals!) between and including 0 and 100. Their final cost will eventually be divided by the insurance rate. Insurance in real life is a little bit more complicated, but let’s keep it simple, huh?</p>
+            <p> Once a region has been set, you must then be prepared to take in any number of coaches. Each coach may or may not have insurance so you must ask if the coach has insuarnce. Their insurance rate should then be taken as input from the user as a value (that might have decimals!) between and including 0 and 100. 0 indicating they have no insurance. Their final cost will eventually be divided by the insurance rate. Insurance in real life is a little bit more complicated, but let’s keep it simple, huh?</p>
             
             <h3> Cost </h3>
             <p> Each coach can carry anywhere between 1 to 6 Codéballs with them that they need to get healed. This information must be taken as input from the user. </p>
@@ -84,7 +84,112 @@
            <h3> Conversion Rates </h3>
            <p> Due to a very odd law passed in this universe recently, all calculations must be done using the dollar ($) currency, however, all output must be displayed using the ampersand (&) currency. To convert dollars to ampersands, you must multiply by 11/17 and then add 3.62. Round the final cost up to the nearest penny. </p>
            <p> Once the final price has been calculated, give the user the final price charged to the coach, and prompt the user to see if there are any more coaches in the Codécenter. If there are any, repeat this process. If there are no more, give us an exit message and terminate the program. </p>
+           
+            <h3>Precision</h3>
+           <p> Since you want to output the total as a monetary amount, your program will need to display 2 decimal places at all times. Because a total of $3.5 or &3.5 looks weird. To do this we can put the follow code into your program</p>
+           <pre>
+cout.setf(ios::fixed);
+cout.setf(ios::showpoint);
+cout.precision(2);
+           </pre>
+           <p>After this code, all floating point output will have exactly 2 figures after the decimal point.</p>
+           
+           <h3> Sample </h3>
+           <pre> 
+        Welcome to Wong's Fabulous Codecenter Price Gouger Calculator
+What region are you using this program from?
+1. Konta
+2. Jahta
+3. Hainn
+4. Sennah
+5. Ynavo
+6. Kolas
+7. Olalo
+8. Golor
+Region: 4
+
+Does the coach have insurance (y/n)? y
+What is this coach's insurance rate (0-100)? 50.53518
+
+How many codeballs does this coach need healed (1-6)? 3
+
+Which ball?
+1. Code Ball
+2. Good Ball
+3. Extreme Ball
+4. Budget Ball
+5. Boujee Ball
+Ball Type: 1
+
+Which ball?
+1. Code Ball
+2. Good Ball
+3. Extreme Ball
+4. Budget Ball
+5. Boujee Ball
+Ball Type: 3
+
+Which ball?
+1. Code Ball
+2. Good Ball
+3. Extreme Ball
+4. Budget Ball
+5. Boujee Ball
+Ball Type: 5
+
+Total Cost: &10.92
+
+Are there any coaches left (y/n)?
+y
+
+Does the coach have insurance (y/n)? y
+What is this coach's insurance rate (0-100)? 20.2
+
+How many codeballs does this coach need healed (1-6)? 7
+
+How many codeballs does this coach need healed (1-6)? 2
+
+Which ball?
+1. Code Ball
+2. Good Ball
+3. Extreme Ball
+4. Budget Ball
+5. Boujee Ball
+Ball Type: 6
+
+Which ball?
+1. Code Ball
+2. Good Ball
+3. Extreme Ball
+4. Budget Ball
+5. Boujee Ball
+Ball Type: 2
+
+Which ball?
+1. Code Ball
+2. Good Ball
+3. Extreme Ball
+4. Budget Ball
+5. Boujee Ball
+Ball Type: -1
+
+Which ball?
+1. Code Ball
+2. Good Ball
+3. Extreme Ball
+4. Budget Ball
+5. Boujee Ball
+Ball Type: 3
+
+Total Cost: &11.47
+
+Are there any coaches left (y/n)?
+n
+
+Good Bye!
+           </pre>
            <hr border-color="black">
+           
            <h2 style="text-align:center"> Things to remember </h2>
            <ul>
              <li>	Make sure to validate ALL of your user inputs. That means making sure they are the correct data types, as well as being within the correct ranges. We WILL try and stress test your code. </li>
