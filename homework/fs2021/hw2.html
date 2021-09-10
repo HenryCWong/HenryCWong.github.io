@@ -26,17 +26,41 @@
               <hr border-color="black">
               
               <h2 style="text-align:center">Background</h2>
-              <p>  The Codémon Academy is the premiere for-profit monster fighting academy (Pokemon Academy is the non-profit one). The Academy has hired you for a lucrative amount (that you yourself will never see) to create a program for their new admissions system. 
-The purpose of this program is to decide whether the student should be admitted to the Academy and to determine how much the applicant will be paying if they were to attend. 
-To increase their chances, applicants can hire an "academy admissions expert" that can direct the applicant to "donate" money to school athletic directors. If the applicant does such, we record how much money was paid to the academy’s athletic director, which will increase the applicant’s chances in getting into the academy. 
-The administration of the academy also seem to have an infatuation with the 90’s hit TV show “Brimful Residence” (which they watch during work hours). We have no idea why, but they seem to specifically fixate on the character “Aunt Becky”.
+              <p>  The Codémon Academy is the premiere for-profit monster fighting academy (Pokemon Academy is the non-profit one). The Academy has hired you for a lucrative amount (that you yourself will never see) to create a program for their new admissions system.</p>
+              <div class="span4">
+                <div class="clearfix content-heading">
+                  <img class="pull-right" src="https://henrycwong.com/gallery/images/1570GW/codeAcademy.png" width="180px"/>
+
+<p>The purpose of this program is to decide whether the student should be admitted to the Academy and to determine how much the applicant will be paying if they were to attend. 
+To increase their chances, applicants can hire an "academy admissions expert" that can direct the applicant to "donate" money to school athletic directors. If the applicant does such, we record how much money was paid to the academy's athletic director, which will increase the applicant's chances in getting into the academy. 
+The administration of the academy also seem to have an infatuation with the 90's hit TV show "Brimful Residence" (which they watch during work hours). We have no idea why, but they seem to specifically fixate on the character "Aunt Becky".
 </p>
-            <h2 style="text-align:center">Specifications</h2>
+              </div>
+            </div>
+          <h2 style="text-align:center">Specifications</h2>
             You will write three functions: 
             <ol>
-              <li>isAccepted()</li>
-              <li>calculateDonationProbability()</li>
-              <li>calculateTuition()</li>
+              <li>
+                  <b>isAccepted()</b>
+                  <ul>
+                  <li>Returns whether or not the applicant was accepted into the academy.</li>
+                  </ul>
+               </li>
+              
+              <li>
+                  <b>calculateDonationProbability()</b>
+                  <ul>
+                   <li>Returns the chance the applicant will donate to the academy in the future.</li>
+                  </ul>
+              </li>
+
+              <li>
+                 <b>calculateTuition()</b>
+                 <ul>
+                   <li>Returns the amount of tuition the applicant will pay if accepted</li>
+                 </ul>
+              </li>
+            
             </ol>  
             
             <p></p>Note: Use your best judgement on deciding the parameters of each function. Do not pass in parameters that are not used. 
@@ -65,21 +89,24 @@ You will continue to ask for inputs and students until there are no more applica
           </ol>
          
          <h3>Function Specifications</h3>
-         <u> isAdmitted()</u>
-         <p> isAdmitted() will return whether the applicant got into the academy or not. To determine this, each applicant is given a score and applicants that score above 30 points will be admitted to the academy. There are two ways for applicants to earn points, applicants will receive 10 points per tournament that they have won and 2 points per Codémon they own. The applicant’s final score will be calculated by the following formula: total_points + (total_points * donation_percentage). Where donation_percentage comes from the calculateDonationProbability(). 
-In this universe, the number of pokemon you own is sometimes considered personal information. Therefore, the academy does not require the applicant to enter the number of pokemon they have. This is denoted by a “-1” when the data is entered into the program. In this case, overload the isAdmitted() function to calculate the score of the applicant just from how many tournaments they have won and their donation percentage. 
+         <b><u> isAdmitted()</u></b>
+         <p> isAdmitted() will return whether the applicant got into the academy or not. To determine this, each applicant is given a score and applicants that score above 30 points will be admitted to the academy. There are two ways for applicants to earn points, applicants will receive 10 points per tournament that they have won and 2 points per Codémon they own. The applicant's final score will be calculated by the following formula: 
+         <code>total_points + (total_points * donation_percentage)</code>. Where donation_percentage comes from the <b>calculateDonationProbability()</b>. 
+In this universe, the number of pokemon you own is sometimes considered personal information. Therefore, the academy does not require the applicant to enter the number of pokemon they have. This is denoted by a "-1" when the data is entered into the program. In this case, overload the isAdmitted() function to calculate the score of the applicant just from how many tournaments they have won and their donation percentage. 
 </p>
          
-         <u>calculateDonationProbability()</u>       
-         <p> Each applicant starts out with a 1% chance of donating to the school. If the applicant has parents from the hit 90’s show “Brimful Residence”, add 10% to the chance that the applicant will donate.If the application’s household income is above $200,000 add 10% and if above $500,000 add 20% instead.
+         <b><u>calculateDonationProbability()</u></b>    
+         <p> Each applicant starts out with a 1% chance of donating to the school. If the applicant has parents from the hit 90's show "Brimful Residence", add 10% to the chance that the applicant will donate.If the application's household income is above $200,000 add 10% and if above $500,000 add 20% instead.
 The donation percentage will also increase based on how much money the applicant has already donated (to the athletic director). The donation chances will jump up by 5% if the applicant has already donated more than or equal to $10,000 and 10% if they have donated more than or equal to $100,000. 
-After numerous heated free caviar meetings with the academy administration, the academy has deemed any cast member from the tv show “Brimful Residence” who’s household makes less than $200,000 is not cool enough for this academy to consider them special. In fact, the school denies their existence in “Brimful Residence”. You will need to update the variable to reflect the administration’s decision.  
+After numerous heated free caviar meetings with the academy administration, the academy has deemed any cast member from the tv show "Brimful Residence" who's household makes less than $200,000 is not cool enough for this academy to consider them special. In fact, the school denies their existence in "Brimful Residence". You will need to update the variable to reflect the administration's decision.  
 </p>   
-         <u>calculateTuition()</u> 
+         <b><u>calculateTuition()</u></b>
          <p>Tuition will start from randomly generated floats between $50,000.00 and $1,000,000.00 inclusive, ( [50000,1000000]). I know the range is absurd but this is a for-profit university. We want the starting tuition to have exactly a precision of 2 (2 decimal places). Not just at output, but the variable itself. 
-There are many ways for the candidate to get scholarships to reduce their total tuition cost. First, the score from isAdmitted() is multiplied by 100 and will be subtracted from the tuition cost. The applicant will also receive a $5,000 scholarship for each tournament they have won (i.e Josh won 16 tournaments, so he gets a $80,000 scholarship). If the applicant’s parents are from the hit 90’s tv show “Brimful Residence”, the applicant will receive an extra $20,000 in scholarship money. 
-The tuition can also increase in this function as well. The applicant’s tuition will increase an extra $20,000 for every $100,000 of their income (i.e if Ash’s family’s income is $432,000, he will have an extra $40,000 added to his tuition). 
-The scholarship money has the possibility of reducing tuition in its entirety and even making tuition a negative number. However, the Academy is not a “nice” institution. Therefore, if the amount of tuition money subtracted causes the cost of attending the academy to be negative, the tuition will cost $3.50. 
+<p>There are many ways for the candidate to get scholarships to reduce their total tuition cost.
+First, the score from isAdmitted() is multiplied by 100 and will be subtracted from the tuition cost. The applicant will also receive a $5,000 scholarship for each tournament they have won (i.e Josh won 16 tournaments, so he gets a $80,000 scholarship). If the applicant's parents are from the hit 90's tv show "Brimful Residence", the applicant will receive an extra $20,000 in scholarship money.
+</p>
+The tuition can also increase in this function as well. The applicant's tuition will increase an extra $20,000 for every $100,000 of their income (i.e if Ash's family's income is $432,000, he will have an extra $40,000 added to his tuition). 
+The scholarship money has the possibility of reducing tuition in its entirety and even making tuition a negative number. However, the Academy is not a "nice" institution. Therefore, if the amount of tuition money subtracted causes the cost of attending the academy to be negative, the tuition will cost $3.50. 
 </p>
        </div>
 
