@@ -59,19 +59,6 @@ int main()
   const int BALL_NUM_MIN = 0;        // the minimum the user can enter for number of balls
   const int BALL_TYPE_MAX = 5;       // the maximum number of ball types
   const int BALL_TYPE_MIN = 0;       // the minimum the user can enter for ball type
-  const int KONTA_REGION_NUM = 1;    // number to represent the konta region
-  const int JAHTA_REGION_NUM = 2;    // number to represent the jahta region
-  const int HAINN_REGION_NUM = 3;    // number to represent the hainn region
-  const int SENNAH_REGION_NUM = 4;   // number to represent the sennah region
-  const int YNAVO_REGION_NUM = 5;    // number to represent the yanvo region
-  const int KOLA_REGION_NUM = 6;     // number to represent the kola region
-  const int OLALO_REGION_NUM = 7;    // number to represent the olalo region
-  const int GOLOR_REGION_NUM = 8;    // number to represent the golor region
-  const int CODEBALL_NUM = 1;        // number to represent code balls
-  const int GOODBALL_NUM = 2;        // number to represent good balls
-  const int EXTREMEBALL_NUM = 3;     // number to represent extreme balls
-  const int BUDGETBALL_NUM = 4;      // number to represent budget balls
-  const int BOUJEEBALL_NUM = 5;      // number to represent bouje balls
   const float CONVERSION_MOD = 11.0/17; //conversion modifier to exchange currencies
   const float CONVERSION_ADD = 3.62;    // conversion addition used to exchange currencies
   const float ROUNDING_VAR = 0.009;     // variable used for rounding
@@ -175,24 +162,24 @@ int main()
       {
           switch(ballType)
           {
-            case CODEBALL_NUM:
+            case 1:
               totalCost+= CODEBALL_COST;
               ballCounter++;
               break;
-            case GOODBALL_NUM:
+            case 2:
               totalCost += GOODBALL_COST;
               ballCounter++;
               break;
-            case EXTREMEBALL_NUM:
+            case 3:
               totalCost += EXTREMEBALL_COST;
               ballCounter++;
               break;
-            case BUDGETBALL_NUM:
+            case 4:
               totalCost += BUDGETBALL_COST;
               hasBudgetBall = true;
               ballCounter++;
               break;
-            case BOUJEEBALL_NUM:
+            case 5:
               totalCost += BOUJEEBALL_COST;
               hasBoujeeBall = true;
               ballCounter++;
@@ -205,28 +192,28 @@ int main()
     // calculate tax
     switch(region)
     {
-      case KONTA_REGION_NUM: 
+      case 1: 
         totalCost *= KONTATAX;
         break;
-      case JAHTA_REGION_NUM:
+      case 2:
         totalCost *= JAHTATAX;
         break;
-      case HAINN_REGION_NUM:
+      case 3:
         totalCost *= HAINNTAX;
         break;
-      case SENNAH_REGION_NUM:
+      case 4:
         totalCost *= SENNAHTAX;
         break;
-      case YNAVO_REGION_NUM:
+      case 5:
         totalCost *= YNAVOTAX;
         break;
-      case KOLA_REGION_NUM:
+      case 6:
         totalCost *= KOLASTAX;
         break;
-      case OLALO_REGION_NUM: 
+      case 7: 
         totalCost *= OLALOTAX;
         break;
-      case GOLOR_REGION_NUM:
+      case 8:
         totalCost *= GOLORTAX;
         break;
     }
