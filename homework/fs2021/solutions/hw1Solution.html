@@ -86,6 +86,7 @@ int main()
   bool arrested = false;
   int ballCounter = 0;
   char hasInsurance;
+  char inLineChar;
   //for two point percision
   cout.setf(ios::fixed);
   cout.setf(ios::showpoint);
@@ -243,8 +244,10 @@ int main()
 
     }
 
-    cout << "Are there any coaches left? (0 for no, 1 for yes)" << endl;
-    cin >> coachInLine;
+    
+    cout << "Are there any coaches left? (y/n)" << endl;
+    cin >> inLineChar;
+    coachInLine = inLineChar=='y'?true:false;
   }while(coachInLine);
 
   cout << "Good Bye!" << endl;
