@@ -26,3 +26,7 @@ body {
   overflow-y: scroll;
 }
 
+pre {
+    background-color: #23241f;
+    color: #f8f8f8;
+}
