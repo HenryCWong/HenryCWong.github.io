@@ -10,6 +10,10 @@
     <link href="https://henrycwong.com/css/stackicons-master/css/stackicons-social.css" rel="stylesheet" media="screen" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <!-- code highlighting -->
+    <link rel="stylesheet"href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/monokai-sublime.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
 
     <link href="../../css/main.css" rel="stylesheet" type="text/css"/>
     <link href="../../css/sidebar.css" rel="stylesheet" type="text/css"/>
@@ -88,11 +92,9 @@
            
             <h3>Precision</h3>
            <p> Since you want to output the total as a monetary amount, your program will need to display 2 decimal places at all times. Because a total of $3.5 or &3.5 looks weird. To do this we can put the follow code into your program</p>
-           <pre>
-cout.setf(ios::fixed);
+<pre><code>cout.setf(ios::fixed);
 cout.setf(ios::showpoint);
-cout.precision(2);
-           </pre>
+cout.precision(2);</code></pre>
            <p>After this code, all floating point output will have exactly 2 figures after the decimal point.</p>
            
            <h3> Sample </h3>
