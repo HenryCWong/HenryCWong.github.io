@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+
+<!-- HEAD -->
+<head>
+
+
+ <title>Henry Wong's Page</title>
+    <link href="https://henrycwong.com/css/bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="https://henrycwong.com/css/stackicons-master/css/stackicons-social.css" rel="stylesheet" media="screen" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <link href="https://henrycwong.com/css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="https://henrycwong.com/css/sidebar.css" rel="stylesheet" type="text/css"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://henrycwong.com/gallery/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://henrycwong.com/gallery/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://henrycwong.com/gallery/images/favicon-16x16.png">
+    <link rel="shortcut icon" href="favicon.ico" />
+        <div class="col-md-9">
+           
+            <div class="profile-content">
+            
+              <h1 style="text-align:center">Homework 3</h1>
+              <h2 style="text-align:center"> Due Date: October 1st, 2021 at 12:00pm</h2>
+              <hr border-color="black">
+              
+              <p>For this assignment, you will submit multiple C++ compilable files containing a program written in C++.  For every function, you must have the proper function documentation as well! We suggest (strongly) that you make a directory for every assignment!  Name your file a meaningful name and give it a .cpp extension since you will be compiling it. Also, make sure that you compile and run your program using the GNU (g++) compiler before submitting to make sure that it will work. 
+</p>
+              
+              <h2 style="text-align:center">Background</h2>
+              <p>  Congratulations! You are now admitted to the Codémon Academy (after significant efforts) and you just can’t wait to become a Codémon master. However, every new student must go through a test first to determine their inherent potential of becoming one.  The test requires you to bravely enter the unspeakable Codémon Forest, located just behind the school yard of the academy. Many different species of Codémons live inside the forest and your task is to capture and collect as many Codémons as you can.
+</p>
+        <div class="container">
+           <div class="row">
+             <div class="col-4">
+               <div class="text-center">
+                 <img class="mx-auto d-block" src="https://henrycwong.com/gallery/images/1570HW/forest.png" width="400px">  
+               </div>
+             </div>
+           </div>
+         </div>    
+        
+          <p>Each Codémon monster is categorized into different family types; each family possesses a unique set of power and attributes. For this particular test, you will be concerned with the family of Flying, Poison, Rock, Bug, Water, and Dragon.
+
+In order for you to successfully capture each Codémon, the trick is to outsmart them by performing some mathematical magic. The faster you solve the problems, the more Codémons you’ll catch at the end. Remember, this test is not an easy one—it has the reputation of even costing a student’s life if not being careful. Though, if passed with flying colors, then the future, for sure, will be destined to bathe in the glory of being an almighty Codémon master. </p>
+  
+         <h2 style="text-align:center">Specifications</h2>
+         <ol>
+           <li>
+             <p>The program should begin with you entering the forest to start the test. Once inside the forest, you’ll need to begin the test by calling the explore()1 function. This function should return the family type of the Codémons that you encountered and should obtain the result by initiating the sequence to generate a random letter character (A-Z, case sensitive). If the random character is a match for any of the first letters of the said family types (Bug, Flying, Rock, Poison, Water), then that’ll be the family type of the Codémon encountered. For example, if the random character obtained is B, then the encountered type would be Bug. </p>
+             <ul>
+               <li>As you can see, while this function will not run infinitely, but sometimes it could take a long time to encounter a Codémon</li>
+               <li>This function should also keep track of the amount of time it takes for the current Codémon to be encountered. The student should be notified of this information when the function returns. A time unit is measured by the number of total random character iteration.  </li>
+               <li>Since the family type of <b>Dragon</b> is a rare one, it can only be encountered if you are SUPER lucky. That is, return the Dragon family type only if you have encountered the same family type TWO times in a roll. Replacing the duplicate roll with the Dragon type. This <b>must</b> be logically determined from within the explore() function without the need of any function arguments to be provided. For instance, let’s say you first encountered a Rock Codémon, during your second exploration, if the random character matched that of Rock again, return the Dragon type instead.</li>
+             </ul>
+           </li>
+           <li>
+             <p>Now that you have encountered a Codémon, the next task would be to capture it. There is going to be a <i>different</i> <b>capture()</b> function that you’ll use for each family type, but the <b>function name</b> stays the same2. In fact, for each version of the capture() function, the core logic depends on the mathematical problem referred to as the “Triangular Number Sequence”. A triangular number is a unique number that can be represented in the form of a triangular grid of elements such that every row contains an element more than the previous one. For example, 15 is a valid triangular number but 20 is not (21 is though). </p>
+           <div class="container">
+           <div class="row">
+             <div class="col-4">
+               <div class="text-center">
+                 <img class="mx-auto d-block" src="https://henrycwong.com/gallery/images/1570HW/triangle.png" width="400px">  
+               </div>
+             </div>
+           </div>
+         </div>  
+           <p>For the capture() functions that you are going to overload, most of them require you to compute a random, valid triangular number within a certain range. Here, you’ll need to figure out two things: 1) how to validate a given integer value is a triangular number, and 2) be able to generate a random number within a [min, max] range. What about the rest of the steps? Well, it’s a test! So, you’ll need to figure them out yourself3. Next, checkout the following detail requirement for capturing each specific family type:</p>
+                <b>Flying: capture()</b>
+                
+                 <p>In order to capture a Flying Codémon, it needs to know the length of the student’s left and right arm measured separately in inches (0&ltlength&lt=1000). This piece of info should be obtained from the student before entering the unspeakable forest and to be passed into this function as parameters. The capture attempt would be successful if the sum of the two lengths (no decimals) equal to a valid triangular number. </p></li>
+                
+                <b>Poisin: capture()</b>
+                <p>In order to capture a Poison Codémon, you’ll have to first generate a random valid triangular number within the range of [1, 100]. The capture is a successful one if that number is smaller than another magical number 43<sup>4</sup>.</p>
+                
+                <b>Rock: capture()</b>
+                <p>    In order to capture a Rock Codémon, a battle is necessary. The Rock Codémon will first generate a random valid triangular number, followed by you also doing the same. The range is [56, 4586]. You’d then take the number you generated and multiply it with the amount of time it takes to encounter this Codémon. You will win the battle if your resulting value is greater than the Rock Codémon’s.</p>
+                
+                <b>Bug: capture()</b>
+                <p>The requirement you need to satisfy to capture a Bug Codémon is more complex than the other ones since it involves the use of pesticide. The function will first need to know whether or not you have already captured at least a Poison and Water Codémon—otherwise you won’t have the ingredients you need to produce the pesticide which will temporarily paralyzed the Bug Codémon you are trying to capture. This information needs to be provided to the function when it’s called.</p>
+              
+                <b>Water: capture()</b>
+                <p>The key to capturing a Water Codémon is somewhat similar to that of a rock type. The Codémon will generate a random valid triangular number first within the range of [10000000, 20219999]. Your battling number, though, is not randomly generated this time but through user input within this function, asking separately for the student’s birth year, month, and day. The end result is going to be an integer combination of the different attributes. For example, if the student is born in 1990, January 26th, then the representative integer number would be 19900126. You win if your “birth number” is smaller than the Codémon’s.</p>
+                
+                <b>Dragon: capture()</b>
+                <p>Note that a special capture function for the Dragon type is not needed since your “super luckiness” shall result in an automatic capture in this case.</p>
+       
+           </li>
+           <li>
+             <p>Like all good things, this test eventually comes to an end when the student has collected enough Codémon monsters, and that magical number is 20.  A student is deemed SUPER if the total exploration time spent is less than or equal to 50 time units, ACCEPTABLE if it is less than or equal to 200 time units, and DIMINISHING (of the Codémon master potential) if it is anything else. Based on the student’s standing, the testSummary() function should be called with different parameters; however, it should only be defined ONCE in your implementation. </p>
+             <p>In addition, the academy is not that mean. It will reward the students who completed the test with Dragon Codémons if they are lucky. And by lucky we mean only the students who performed at the SUPER level.</p>
+             <p>The function signature resembles something like this: </p>
+             <pre>
+Void testSummary( student_ranking,
+                  ranking_based_info,
+                  numberOfDragonsRewarded);
+             </pre>
+             <p>Consider the flexibility of the ranking_based_info parameter here, it should have the potential to represent ANY information needed. So be careful when choosing the most appropriate data type for it. </p>
+             <ul>
+               <li>
+                 <p>SUPER: if a student is super, a string of messages (input from the student) should be passed into the function, expressing the emotions of joy and happiness, as well as the number of Dragon Codémon captured. If the super student did not capture any, then omit this parameter and the academy will still reward a total of ONE to the student. The function should produce the following output if the student’s name is Andy Royale and he captured two Dragon Codémons</p>
+                 <pre>
+Andy Royale’s Test Ranking: SUPER
+
+              Andy’s Emotional Message: whatever_Andy_wants_to_say!
+
+              Andy will be rewarded 2 Dragon Codémons! 
+                 </pre>
+              </li>
+              <li>
+                <p>    ACCEPTABLE: if a student shows an acceptable level of potential, then you should pass into the function the first letter of the Codémon family type that is collected the most during the test. The function should produce the following output if the student’s name is Johnie Katlego and the ROCK Codémon type is captured the most:  </p>
+                <pre>
+Johnie Katlego’s Test Ranking: ACCEPTABLE
+
+Johnie’s Favorite Letter: R!
+
+Johnie will be rewarded 0 Dragon Codémons! 
+                </pre>
+              </li>
+              <li>
+              <p>    DIMINISHING: the diminishing Codémon master potential  in a student is primarily expressed via the total exploration time (hint: this value should already be stored in an INT variable). So, pass this into the function. The function should produce the following output if the student’s name is Lou Wen: </p>
+              <pre>
+Lou Wen’s Test Ranking: DIMINISHING
+
+Lou’s Total Exploration Time: whatever_that_time_is!
+
+Lou will be rewarded 0 Dragon Codémons!
+              </pre>
+              </li>
+             </ul>
+           </li>
+         </ol>
+    <b>Notes:</b>
+    <ol>
+      <li>It is up to you to determine the most appropriate parameters for the explore() function.</li>
+      <li>Technically, each <b>capture()</b> function can return something different. But in this case, they should all be returning the same thing (you don’t have to listen to me). And again, you need to be smart about choosing the most appropriate parameters for each version of this function since it’s being overloaded. </li>
+      <li>Feel free to create additional functions relevant to handling the triangular numbers. In fact, I’d recommend you to for the sake of function reusability.</li>
+      <li>Did you know that our world emits about 43 billion tons of CO2 a year? </li>
+      <li>Seed the random number generator function with the value of 1100. </li>
+      <li>Even though everyone is using the same seed for the random number generation, the random valid triangular numbers generated among your peers might be different. As long as your chosen approach is reasonable and insaneness-free in obtaining the valid triangular numbers (the random number function has to be incorporated though), then you should be fine.</li>
+    </ol>
+    </div>
+
+</div>
+
+</body>
+
+</html>
