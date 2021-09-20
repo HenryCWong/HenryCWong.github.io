@@ -48,7 +48,7 @@ In order for you to successfully capture each Codémon, the trick is to outsmart
          <h2 style="text-align:center">Specifications</h2>
          <ol>
            <li>
-             <p>The program should begin with you entering the forest to start the test. Once inside the forest, you’ll need to begin the test by calling the explore()1 function. This function should return the family type of the Codémons that you encountered and should obtain the result by initiating the sequence to generate a random letter character (A-Z, case sensitive). If the random character is a match for any of the first letters of the said family types (Bug, Flying, Rock, Poison, Water), then that’ll be the family type of the Codémon encountered. For example, if the random character obtained is B, then the encountered type would be Bug. </p>
+             <p>The program should begin with you entering the forest to start the test. Once inside the forest, you’ll need to begin the test by calling the explore()<sup>1</sup> function. This function should return the family type of the Codémons that you encountered and should obtain the result by initiating the sequence to generate a random letter character (A-Z, case sensitive). If the random character is a match for any of the first letters of the said family types (Bug, Flying, Rock, Poison, Water), then that’ll be the family type of the Codémon encountered. For example, if the random character obtained is B, then the encountered type would be Bug. </p>
              <ul>
                <li>As you can see, while this function will not run infinitely, but sometimes it could take a long time to encounter a Codémon</li>
                <li>This function should also keep track of the amount of time it takes for the current Codémon to be encountered. The student should be notified of this information when the function returns. A time unit is measured by the number of total random character iteration.  </li>
@@ -65,7 +65,7 @@ In order for you to successfully capture each Codémon, the trick is to outsmart
              </ul>
            </li>
            <li>
-             <p>Now that you have encountered a Codémon, the next task would be to capture it. There is going to be a <i>different</i> <b>capture()</b> function that you’ll use for each family type, but the <b>function name</b> stays the same2. In fact, for each version of the capture() function, the core logic depends on the mathematical problem referred to as the “Triangular Number Sequence”. A triangular number is a unique number that can be represented in the form of a triangular grid of elements such that every row contains an element more than the previous one. For example, 15 is a valid triangular number but 20 is not (21 is though). </p>
+             <p>Now that you have encountered a Codémon, the next task would be to capture it. There is going to be a <i>different</i> <b>capture()</b> function that you’ll use for each family type, but the <b>function name</b> stays the same<sup>2</sup>. In fact, for each version of the capture() function, the core logic depends on the mathematical problem referred to as the “Triangular Number Sequence”. A triangular number is a unique number that can be represented in the form of a triangular grid of elements such that every row contains an element more than the previous one. For example, 15 is a valid triangular number but 20 is not (21 is though). </p>
            <div class="container">
            <div class="row">
              <div class="col-4">
@@ -75,7 +75,7 @@ In order for you to successfully capture each Codémon, the trick is to outsmart
              </div>
            </div>
          </div>  
-           <p>For the capture() functions that you are going to overload, most of them require you to compute a random, valid triangular number within a certain range. Here, you’ll need to figure out two things: 1) how to validate a given integer value is a triangular number, and 2) be able to generate a random number within a [min, max] range. What about the rest of the steps? Well, it’s a test! So, you’ll need to figure them out yourself3. Next, checkout the following detail requirement for capturing each specific family type:</p>
+           <p>For the capture() functions that you are going to overload, most of them require you to compute a random, valid triangular number within a certain range. Here, you’ll need to figure out two things: 1) how to validate a given integer value is a triangular number, and 2) be able to generate a random number within a [min, max] range. What about the rest of the steps? Well, it’s a test! So, you’ll need to figure them out yourself<sup>3</sup>. Next, checkout the following detail requirement for capturing each specific family type:</p>
                 <b>Flying: capture()</b>
                 
                  <p>In order to capture a Flying Codémon, it needs to know the length of the student’s left and right arm measured separately in inches (0&ltlength&lt=1000). This piece of info should be obtained from the student before entering the unspeakable forest and to be passed into this function as parameters. The capture attempt would be successful if the sum of the two lengths (no decimals) equal to a valid triangular number. </p></li>
