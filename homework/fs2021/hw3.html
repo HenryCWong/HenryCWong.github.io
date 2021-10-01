@@ -75,7 +75,9 @@ In order for you to successfully capture each Codémon, the trick is to outsmart
              </div>
            </div>
          </div>  
-           <p>For the capture() functions that you are going to overload, most of them require you to compute a random, valid triangular number within a certain range. Here, you’ll need to figure out two things: 1) how to validate a given integer value is a triangular number, and 2) be able to generate a random number within a [min, max] range. What about the rest of the steps? Well, it’s a test! So, you’ll need to figure them out yourself<sup>3</sup>. Next, checkout the following detail requirement for capturing each specific family type:</p>
+           <p>For the capture() functions that you are going to overload, most of them require you to compute a random, valid triangular number within a certain range. </p>
+           <p style="color: red"> For this particular homework assignment, you may safely assume that any given range will contain at least one valid triangular number. </p>
+           <p>Here, you’ll need to figure out two things: 1) how to validate a given integer value is a triangular number, and 2) be able to generate a random number within a [min, max] range. What about the rest of the steps? Well, it’s a test! So, you’ll need to figure them out yourself<sup>3</sup>. Next, checkout the following detail requirement for capturing each specific family type:</p>
                 <b>Flying: capture()</b>
                 
                  <p>In order to capture a Flying Codémon, it needs to know the length of the student’s left and right arm measured separately in inches (0&ltlength&lt=1000). This piece of info should be obtained from the student before entering the unspeakable forest and to be passed into this function as parameters. The capture attempt would be successful if the sum of the two lengths (no decimals) equal to a valid triangular number. </p></li>
@@ -91,7 +93,7 @@ In order for you to successfully capture each Codémon, the trick is to outsmart
               
                 <b>Water: capture()</b>
                 <p>The key to capturing a Water Codémon is somewhat similar to that of a rock type. The Codémon will generate a random valid triangular number first within the range of [10000000, 20219999]. Your battling number, though, is not randomly generated this time but through user input within this function, asking separately for the student’s birth year, month, and day. The end result is going to be an integer combination of the different attributes. For example, if the student is born in 1990, January 26th, then the representative integer number would be 19900126. You win if your “birth number” is smaller than the Codémon’s.</p>
-                
+                <p style="color: red"> The function needs to know some personal information on the student’s birth year, month, and day (should be obtained before the student enters the forest…)</p>
                 <b>Dragon: capture()</b>
                 <p>Note that a special capture function for the Dragon type is not needed since your “super luckiness” shall result in an automatic capture in this case.</p>
        
@@ -108,7 +110,8 @@ Void testSummary( student_ranking,
              <p>Consider the flexibility of the ranking_based_info parameter here, it should have the potential to represent ANY information needed. So be careful when choosing the most appropriate data type for it. </p>
              <ul>
                <li>
-                 <p>SUPER: if a student is super, a string of messages (input from the student) should be passed into the function, expressing the emotions of joy and happiness, as well as the number of Dragon Codémon captured. If the super student did not capture any, then omit this parameter and the academy will still reward a total of ONE to the student. The function should produce the following output if the student’s name is Andy Royale and he captured two Dragon Codémons</p>
+                 <p>SUPER: if a student is super, a string of messages (input from the student) should be passed into the function, expressing the emotions of joy and happiness, as well as the number of Dragon Codémon captured <a style="color: red">(yes, the student gets to keep all the Dragon Codémons as a reward!)</a>
+                 .If the super student did not capture any, then omit this parameter and the academy will still reward a total of ONE to the student. The function should produce the following output if the student’s name is Andy Royale and he captured two Dragon Codémons</p>
                  <pre>
 Andy Royale’s Test Ranking: SUPER
 
@@ -116,6 +119,15 @@ Andy Royale’s Test Ranking: SUPER
 
               Andy will be rewarded 2 Dragon Codémons! 
                  </pre>
+                 <p style="color:red">When prompting Andy for his emotional message input, you might go for: </p>
+			<pre>
+cin >> emotionalMsg; 
+</pre>
+<p style="color:red">Don’t, because it won’t retrieve the entire line, use the following method instead5: <p/>
+<pre>
+cin.ignore(); // to clean out the input stream buffer  
+getline(cin, emotionalMsg);  
+      </pre>
               </li>
               <li>
                 <p>    ACCEPTABLE: if a student shows an acceptable level of potential, then you should pass into the function the first letter of the Codémon family type that is collected the most during the test. The function should produce the following output if the student’s name is Johnie Katlego and the ROCK Codémon type is captured the most:  </p>
