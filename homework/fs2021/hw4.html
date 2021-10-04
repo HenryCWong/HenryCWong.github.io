@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+
+<!-- HEAD -->
+<head>
+
+
+ <title>Henry Wong's Page</title>
+    <link href="https://henrycwong.com/css/bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="https://henrycwong.com/css/stackicons-master/css/stackicons-social.css" rel="stylesheet" media="screen" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- code highlighting -->
+    <link rel="stylesheet"href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/monokai-sublime.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    
+    <link href="../../css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../css/sidebar.css" rel="stylesheet" type="text/css"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://henrycwong.com/gallery/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://henrycwong.com/gallery/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://henrycwong.com/gallery/images/favicon-16x16.png">
+    <link rel="shortcut icon" href="favicon.ico" />
+        <div class="col-md-9">
+           
+            <div class="profile-content">
+    
+      <h1 style:"text-align:center"> Homework 4</h1>
+      <h2 style:"text-align:center"> Due: October 8th, 2021 </h2>
+      <h3> Scenario </h3>
+      <p>
+        As of today, there is a small problem just outside the Codémon Academy. It seems a group of protestors has amassed outside the gates to protest the practice of keeping Codémon as pets, or something. Recently, members of Team Picket have been disguising themselves as students to try to break into the school, and cause shenanigans. The school has asked you to develop a security system to keep these intruders out. Here is what you must do:
+      </p>
+
+      <p>Define a struct Entrant. Objects of the type entrant will be the different people that try to enter the school. Entrants are to have 5 members:</p>
+      <ul>
+        <li><b>fName</b>: The first name of the entrant. </li> 
+        <li><b>lName</b>: The last name of the entrant.  </li>
+        <li><b>age</b>: The age of the entrant (whole number between 5 and 100 inclusive) </li>
+        <li><b>occupation</b>: The entrants job. The only acceptable values for occupation should be &#8220;Student&#8221;, &#8220;Faculty&#8221;, and &#8220;Staff&#8221;.
+        <li><b>numberOfCodemon</b>: The number of Codémon the entrant has, between 0 and 100 inclusive.</li> 
+      </ul>
+        
+      <p>
+      All of this information will be input by the user.
+
+Your program will create an array of 5 possible entrants at a time, and determine whether or not any of them are secretly Team Picket spies trying to infiltrate the school. There are 2 ways to tell if any of the possible entrants are spies:
+
+      </p>
+
+      <ul>
+        <li>If the entrant is at or over the age of 30 and tries to enter as a student, you should safely assume that they are a Team Picket spy.</li>
+        <li>If the entrant has more than 6 Codémon with them, they definitely stole some and you can safely assume that they are a spy.</li>
+      </ul>
+      
+      <p>
+      You will also need to develop a printEntrant function that will display the data of the entrant in a readable manner. 
+
+You must also use multiple files for your program. That is, a main.cpp file, a header.cpp file, and a header.h file. All of your functions must be properly documented as well.
+      </p>
+      
+      <h3>Program Flow</h3>
+      <ul>
+        <li>Have the user input the values for entrant 1, entrant 2, entrant 3, entrant 4, then entrant 5.</li>
+        <li>If none of the entrants are suspected of spycraft, output a message along the lines of &#8220;None of the entrants were suspected of spycraft, all were allowed to enter&#8221;.</li>
+        <li>If any of the students were suspected of being spies, output a message along the lines of &#8220;The following entrants have been denied entry due to suspicions of Team Picket affiliations:&#8221;, followed by a printout of the data for each entrant that was denied entry.</li>
+        <li>The program should ask if there are any more entrants waiting to enter (possible answers should be &#39;n&#39;, &#39;N&#39;, &#39;y&#39;, or &#39;Y&#39;). If the answer is &#39;y&#39; or &#39;Y&#39;, take an array of another 5 possible entrants, and repeat the program until the answer to this question is &#39;n&#39; or &#39;N&#39;.
+</li>
+      </ul>
+      
+    <h3>Notes</h3>
+    <ul>
+      <li>As always, make your assignments through git.</li>
+      <li>Be sure to range check all of the values input by the user. If any value is outside of the range, you must prompt the user to re-input the value before moving on to the next value. </li>
+    </ul>
+    
+    <h3>Example Ouput</h3>
+    <p>Note: //Note: The following program output asks for the name, age, occupation, and numberOfCodemon for each entrant at the same time. Feel free to ask for all of these values individually, ask for first and last name and get the rest of the data separately, take all 5 entrant values at once, etc. Just make sure that you have the user input these values in the same order as is shown in the example output here. I.e. entrant 1 first name, entrant 1 last name, entrant 1 age, entrant 1 occupation, entrant 1 numberOfCodemon, entrant 2 first name, entrant 2 last name, etc. Taking more than 1 input from the user can make range checking more difficult, so if you find yourself stumped, I recommend taking in 1 variable from the user at a time.
+</p>
+  
+    <pre>---Now booting up Codémon Academy security system---
+
+Please input name, age, occupation, and the number of Codémon for entrant 1:
+
+Glenallen Mixon 14 Student 5
+
+Please input name, age, occupation, and the number of Codémon for entrant 2:
+
+Bobson Dugnutt 41 Student 1
+
+Please input name, age, occupation, and the number of Codémon for entrant 3:
+
+Tim Sandaele 11 Faculty 6
+
+Please input name, age, occupation, and the number of Codémon for entrant 4:
+
+Mike Truk 38 Staff 11
+
+Please input name, age, occupation, and the number of Codémon for entrant 5:
+
+Rey McSriff 29 Student 0
+
+The following entrants have been denied entry due to suspicions of Team Picket affiliations:
+
+Name: Bobson Dugnutt
+Age: 41
+Occupation: Student
+Number of Codémon: 1
+
+Name: Mike Truk
+Age: 38
+Occupation: Staff
+Number of Codémon: 11
+
+Are there more people waiting to enter the academy?
+
+Y
+
+Please input name, age, occupation, and the number of Codémon for entrant 1:
+
+Darryl Archideld 26 Staff 4
+
+Please input name, age, occupation, and the number of Codémon for entrant 2:
+
+Dwigt Rortugal 8 Student 3
+
+Please input name, age, occupation, and the number of Codémon for entrant 3:
+
+Shown Furcotte 91 Faculty 6
+
+Please input name, age, occupation, and the number of Codémon for entrant 4:
+
+Willie Dustice 2 Faculty 0
+
+Please input name, age, occupation, and the number of Codémon for entrant 5:
+
+Tony Smehrik 15 Student 5
+
+None of the entrants were suspected of spycraft, all were allowed to enter”
+
+Are there more people waiting to enter the academy?
+
+N
+
+Goodbye.</pre>
+
+<h3>Sample Input</h3>
+<p>If you want to test some input to try and get the same results as the example above, you can run your code and copy/paste this into the command line:</p>
+<pre>Glenallen Mixon 14 Student 5 Bobson Dugnutt 41 Student 1 Tim Sandaele 11 Faculty 6 Mike Truk 38 Staff 11 Rey McSriff 29 Student 0 Y Darryl Archideld 26 Staff 4 Dwigt Rortugal 8 Student 3 Shown Furcotte 91 Faculty 6 Willie Dustice 2 Faculty 0 Tony Smehrik 15 Student 5 N</pre>
+    </div>
+
+</div>
+
+</body>
+
+</html>
