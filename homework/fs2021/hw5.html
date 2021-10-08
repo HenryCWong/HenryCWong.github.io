@@ -102,7 +102,7 @@ wget https://henrycwong.com/homework/fs2021/hw5/the_chamber_of_ekans.log</pre>
             <li> <code>Entrant has too many codemon, entrant has <i>A</i> codemon, the third quartile is <i>B</i> </code></li>
           </ul>
         </li>
-      <ul>
+      </ul>
       
       <p>Notice the format is similar to the printEntrant function in the previous homework. However, for this homework <b>we will expect you to overload the << operator.</b></p>
       <p> If one entrant has more than one warning, treat each warning as a separate entity regardless of the entrant. Therefore, there will be one warning for each recorded potential violation. The order of which the warning should be presented first is in the following order: </p>
@@ -124,6 +124,16 @@ The Chamber of Ekans: 3 potential violations
 The Library: 2 potential violations
 Faculty Lounge: 0 potential violations
       </pre>
+
+      <h2>Algorithm</h2>
+      <pre>
+Read in input from first zone
+Store data as appropriate
+For every potential violation
+    record a warning in the output file
+Repeat 1-3 for every input file
+Print out the number of total violations per zone in descending order
+      </pre>
       
       <h2>Note: </h2>
       <ul>
@@ -137,15 +147,7 @@ Faculty Lounge: 0 potential violations
       </ul>
       
       
-      <h2>Algorithm</h2>
-      <pre>
-Read in input from first zone
-Store data as appropriate
-For every potential violation
-    record a warning in the output file
-Repeat 1-3 for every input file
-Print out the number of total violations per zone in descending order
-      </pre>
+
 
 
  
