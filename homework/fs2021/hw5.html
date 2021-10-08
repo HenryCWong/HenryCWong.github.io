@@ -25,132 +25,126 @@
            
             <div class="profile-content">
     
-      <h1 style="text-align:center"> Homework 4</h1>
-      <h2 style="text-align:center"> Due: October 8th, 2021 12:00pm</h2>
+      <h1 style="text-align:center"> Homework 5</h1>
+      <h2 style="text-align:center"> Due: October 15th, 2021 12:00pm</h2>
       <hr border-color="black">
-            
-      <h3> Scenario </h3>
-      <p>
-        As of today, there is a small problem just outside the Codémon Academy. It seems a group of protestors has amassed outside the gates to protest the practice of keeping Codémon as pets, or something. Recently, members of Team Picket have been disguising themselves as students to try to break into the school, and cause shenanigans. The school has asked you to develop a security system to keep these intruders out. Here is what you must do:
-      </p>
+       
+      <h2> Background </h2>
+      <p>The Codemon Academy is incredibly satisfied with your work (give yourself a pat on the back...because we can’t afford to pay you anything else). So the academy wants to up their security system to <strike>get control</strike> make students safer. </p>
+      <p>To up their security system, the academy has introduced “zones” with a sign-in system that logs the profile of the entrant as they enter the zone. A zone is a specific section of the academy. Each zone should only be entered by specific people. However, a few rascals sometimes sneak past the security guards. To catch these meddling brats, the academy has installed an entrant detection system that gives them information on each entrant. 
+This information will be outputted to a log file which will be provided. There will be one log file for each zone. </p>   
 
-      <p>Define a struct Entrant. Objects of the type entrant will be the different people that try to enter the school. Entrants are to have 5 members:</p>
+      <h2>Specifications</h2>
+      <p>This homework will build off the last assignment with a few additions. One of the big ones being that you will no longer be taking input from standard in (cin). Instead you will be taking input from FILES! 
+The files can be found here under “Homework 5” on this website. </p>
+      
+      <h3>Zones</h3>
+      <p>The Codemon Academy has only introduced 4 different zones so far (potentially more to come). </p>
+      <ol>
+        <li> The Library </li>
+        <li> Training Room </li>
+        <li> Faculty <strike>Rager</strike> Lounge </li>
+        <li> The Chamber of Ekans (for even more copyright infringement) </li>
+      </ol>
+      
+      <p>You will need to create a struct to represent the zones. To get data for each zone, each zone will have its own log file. Therefore, you will be required to read through 4 files that are provided. </p>
+      <p>Each zone and entrant will be assigned a “security level” ranging from 1-4. The Library has a security level of 1, the Training Room with a security level of 2, the Faculty Lounge with a security level of 3, and finally The Chamber of Ekans with a security of 4. The higher the number, the more strict the security is.</p>
+      <p> Each zone will also have a name and a “total number of potential violations”, which is the total number of potential violations that have occurred within that specific zone.  </p>
+      
+      <h3>Potential Violations</h3>
+      <p>You are to detect whenever there is a potential violation and provide a warning in the output file. </p>
+      <p> A potential violation is committed if: </p>
+      <ol>
+        <li>the entrant is at or over the age of 30 and tries to enter as a student</li>
+        <li>an entrant is logged as entering a zone with a security level higher than themselves
+          <ul>
+            <li> e.g. a student with a security level of 2 is logged to have entered the Faculty Lounge will result in a violation </li>
+            <li> To do this <b>you will be required to overload operator(s)</b></li>
+          </ul>
+        </li>
+        <li> The number of codemon an entrant has is greater than the 3rd quartile of all codemon within the zone the entrant has entered. </li>
+      </ol>
+      
+      <h4><b>Finding the 3rd Quartile</b> </h4>
+      <p>To find the quartile of an array, you must:</p>
+      <ol>
+        <li>Sort the array (sorting should be its own function)</li>
+        <li>Find the index of the 3rd quartile by calculating <code>(3/4) * (<i>n</i>+1) where <i>n</i> </code> is the number of useful data
+          <ul>
+            <il>Find what element is in the index found from the formula above</li>
+            <li> If the index is not a full number, round down to the nearest integer </li>
+          </ul>
+        </li>
+        <p>The number at the index calculated will be the 3rd quartile. </p>
+      </ol>
+      
+      <h3> Recording Warning/Potential Violations </h3>
+      <p>To record these warnings. You will write to a file specifically for the zone where the potential violation occurred. Therefore, you will be writing to 4 different files, each called the_library_warnings.txt, training_room_warnings.txt, faculty_lounge_warnings.txt, and the_chamber_of_ekans_warnings.txt.</p>
+      <p>The warnings per zone will be placed in their respective files. </p>
+      <p> Each warning will contain the following information in order: </p>
       <ul>
-        <li><b>fName</b>: The first name of the entrant. </li> 
-        <li><b>lName</b>: The last name of the entrant.  </li>
-        <li><b>age</b>: The age of the entrant (whole number between 5 and 100 inclusive) </li>
-        <li><b>occupation</b>: The entrants job. The only acceptable values for occupation should be &#8220;Student&#8221;, &#8220;Faculty&#8221;, and &#8220;Staff&#8221;.
-        <li><b>numberOfCodemon</b>: The number of Codémon the entrant has, between 0 and 100 inclusive.</li> 
-      </ul>
-        
-      <p>
-      All of this information will be input by the user.
-
-Your program will create an array of 5 possible entrants at a time, and determine whether or not any of them are secretly Team Picket spies trying to infiltrate the school. There are 2 ways to tell if any of the possible entrants are spies:
-
-      </p>
-
+        <li>The name of the person causing the violation (first name, last name)</li>
+        <li>Age of entrant</li>
+        <li>Occupation of Entrant</li>
+        <li>Number of Codemon Owned</li>
+        <li>Securtiy Level of Entrant</li>
+        <li>They type of potential violation
+          <ul>
+            <li> <code>Classifeid as Student at age <i>X</i> </code></li>
+            <li> <code>Entrant with level of <i>Y</i> eneterd a zone of level <i>Z</i> </code></li>
+            <li> <code>Entrant has too many codemon, entrant has <i>A</i> codemon, the third quartile is <i>B</i> </code></li>
+          </ul>
+        </li>
       <ul>
-        <li>If the entrant is at or over the age of 30 and tries to enter as a student, you should safely assume that they are a Team Picket spy.</li>
-        <li>If the entrant has more than 6 Codémon with them, they definitely stole some and you can safely assume that they are a spy.</li>
+      
+      <p>Notice the format is similar to the printEntrant function in the previous homework. However, for this homework <b>we will expect you to overload the << operator.</b></p>
+      <p> If one entrant has more than one warning, treat each warning as a separate entity regardless of the entrant. Therefore, there will be one warning for each recorded potential violation. The order of which the warning should be presented first is in the following order: </p>
+      <ol>
+        <li>over age of 30 and occupation is “student”</li>
+        <li>entrant has security level lower than zone</li>
+        <li>number of codemon is greater than the third quartile</li>
+      </ol>
+      
+      <p>Therefore, in the output file, the first entrants to be listed are entrants who were over 30 and occupation was “student”. The next entrants listed will be entrants who have a security level less than the security level of the zone they entered. Finally, the last entrants listed in the output file will be entrants who had more Codemon than the 3rd quartile. </p>
+      <p>You will then have a “summary” section that will print out each zone followed by the total number of violations for that zone in descending order. </p>
+      
+      <h2>Example Output (To Stantard Out): </h2>
+      <pre>
+Summary
+
+Training Room: 8 potential violations
+The Chamber of Ekans: 3 potential violations
+The Library: 2 potential violations
+Faculty Lounge: 0 potential violations
+      </pre>
+      
+      <h2>Note: </h2>
+      <ul>
+        <li>Due to traffic constraints, it is impossible for more than 100 entrants to enter a zone in a day. </li>
+        <li>Sort should be its own function.</li>
+        <li>Feel free to use whichever sorting function whether we taught it or not. Just don’t use bogo sort...please. Bubble sort is easy to code. </li>
+        <li>Each warning will be its own entry. Therefore, if one person has more than one violation, this will show up as two separate warnings in the output file. </li>
+        <li>There should be no output to standard out except for the zones printing in descending order at the end of your program. All output will go to the output files. </li>
+        <li>The input files are just text files. </li>
+        <li>We will not grade on just the files given. We may have other files that we don’t show you guys for grading purposes. So you might want to generate your own files to test your code. </li>
       </ul>
       
-      <p>
-      You will also need to develop a printEntrant function that will display the data of the entrant in a readable manner. 
-
-You must also use multiple files for your program. That is, a main.cpp file, a header.cpp file, and a header.h file. All of your functions must be properly documented as well.
-      </p>
       
-      <h3>Program Flow</h3>
-      <ul>
-        <li>Have the user input the values for entrant 1, entrant 2, entrant 3, entrant 4, then entrant 5.</li>
-        <li>If none of the entrants are suspected of spycraft, output a message along the lines of &#8220;None of the entrants were suspected of spycraft, all were allowed to enter&#8221;.</li>
-        <li>If any of the students were suspected of being spies, output a message along the lines of &#8220;The following entrants have been denied entry due to suspicions of Team Picket affiliations:&#8221;, followed by a printout of the data for each entrant that was denied entry.</li>
-        <li>The program should ask if there are any more entrants waiting to enter (possible answers should be &#39;n&#39;, &#39;N&#39;, &#39;y&#39;, or &#39;Y&#39;). If the answer is &#39;y&#39; or &#39;Y&#39;, take an array of another 5 possible entrants, and repeat the program until the answer to this question is &#39;n&#39; or &#39;N&#39;.
-</li>
-      </ul>
+      <h2>Algorithm</h2>
+      <pre>
+      <code>
+Read in input from first zone
+Store data as appropriate
+For every potential violation
+    record a warning in the output file
+Repeat 1-3 for every input file
+Print out  the number of total violations per zone in descending order</code>
+      </pre>
+
+
       
-    <h3>Notes</h3>
-    <ul>
-      <li>As always, make your assignments through git.</li>
-      <li>Be sure to range check all of the values input by the user. If any value is outside of the range, you must prompt the user to re-input the value before moving on to the next value. </li>
-    </ul>
-    
-    <h3>Example Ouput</h3>
-    <p>Note: //Note: The following program output asks for the name, age, occupation, and numberOfCodemon for each entrant at the same time. Feel free to ask for all of these values individually, ask for first and last name and get the rest of the data separately, take all 5 entrant values at once, etc. Just make sure that you have the user input these values in the same order as is shown in the example output here. I.e. entrant 1 first name, entrant 1 last name, entrant 1 age, entrant 1 occupation, entrant 1 numberOfCodemon, entrant 2 first name, entrant 2 last name, etc. Taking more than 1 input from the user can make range checking more difficult, so if you find yourself stumped, I recommend taking in 1 variable from the user at a time.
-</p>
-  
-    <pre>---Now booting up Codémon Academy security system---
 
-Please input name, age, occupation, and the number of Codémon for entrant 1:
-
-Glenallen Mixon 14 Student 5
-
-Please input name, age, occupation, and the number of Codémon for entrant 2:
-
-Bobson Dugnutt 41 Student 1
-
-Please input name, age, occupation, and the number of Codémon for entrant 3:
-
-Tim Sandaele 11 Faculty 6
-
-Please input name, age, occupation, and the number of Codémon for entrant 4:
-
-Mike Truk 38 Staff 11
-
-Please input name, age, occupation, and the number of Codémon for entrant 5:
-
-Rey McSriff 29 Student 0
-
-The following entrants have been denied entry due to suspicions of Team Picket affiliations:
-
-Name: Bobson Dugnutt
-Age: 41
-Occupation: Student
-Number of Codémon: 1
-
-Name: Mike Truk
-Age: 38
-Occupation: Staff
-Number of Codémon: 11
-
-Are there more people waiting to enter the academy?
-
-Y
-
-Please input name, age, occupation, and the number of Codémon for entrant 1:
-
-Darryl Archideld 26 Staff 4
-
-Please input name, age, occupation, and the number of Codémon for entrant 2:
-
-Dwigt Rortugal 8 Student 3
-
-Please input name, age, occupation, and the number of Codémon for entrant 3:
-
-Shown Furcotte 91 Faculty 6
-
-Please input name, age, occupation, and the number of Codémon for entrant 4:
-
-Willie Dustice 2 Faculty 0
-
-Please input name, age, occupation, and the number of Codémon for entrant 5:
-
-Tony Smehrik 15 Student 5
-
-None of the entrants were suspected of spycraft, all were allowed to enter”
-
-Are there more people waiting to enter the academy?
-
-N
-
-Goodbye.
-</pre>
-
-<h3>Sample Input</h3>
-<p>If you want to test some input to try and get the same results as the example above, you can run your code and copy/paste this into the command line:</p>
-<pre>Glenallen Mixon 14 Student 5 Bobson Dugnutt 41 Student 1 Tim Sandaele 11 Faculty 6 Mike Truk 38 Staff 11 Rey McSriff 29 Student 0 Y Darryl Archideld 26 Staff 4 Dwigt Rortugal 8 Student 3 Shown Furcotte 91 Faculty 6 Willie Dustice 2 Faculty 0 Tony Smehrik 15 Student 5 N</pre>
-    </div>
+   </div>
 
 </div>
 
