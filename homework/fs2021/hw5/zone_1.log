@@ -1,0 +1,24 @@
+Glenallen Mixon 14 Student 5 1
+Bobson Dugnutt 41 Student 1  2
+Tim Sandaele 11 Faculty 6 4
+Mike Truk 38 Staff 11 3
+Rey McSriff 29 Student 0 1
+Best Friend 28 Staff 2 3
+
+
+
+Warnings
+
+Name: Mike Truk
+Age:  38
+Occupation: Staff
+Number of Codemon: 11
+Security Level: 2
+Warning: Entrant has too many codemon, entrant has 20 codemon, the third quartile was 8
+
+Name: Bobson Dugnutt
+Age: 41
+Occupation: Student
+Number of Codémon: 1
+Security Level: 2
+Warning: Entrant is classified as student at age 41
