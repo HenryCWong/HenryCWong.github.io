@@ -46,7 +46,7 @@ wget https://henrycwong.com/homework/fs2021/hw5/faculty_lounge.log
 wget https://henrycwong.com/homework/fs2021/hw5/the_chamber_of_ekans.log</pre>
 
       <h3>Zones</h3>
-      <p>The Codemon Academy has only introduced 4 different zones so far (potentially more to come). </p>
+      <p>The Codemon Academy has introduced 4 different zones: </p>
       <ol>
         <li> The Library </li>
         <li> Training Room </li>
@@ -60,13 +60,14 @@ wget https://henrycwong.com/homework/fs2021/hw5/the_chamber_of_ekans.log</pre>
       
       <h3>Potential Violations</h3>
       <p>You are to detect whenever there is a potential violation and provide a warning in the output file. </p>
+      <p>Potential Team Picket members will now be logged as warnings, so no need to print out if a entrant was suspected to be from team Picket. </p>
       <p> A potential violation is committed if: </p>
       <ol>
         <li>the entrant is at or over the age of 30 and tries to enter as a student</li>
         <li>an entrant is logged as entering a zone with a security level higher than themselves
           <ul>
             <li> e.g. a student with a security level of 2 is logged to have entered the Faculty Lounge will result in a violation </li>
-            <li> To do this <b>you will be required to overload operator(s)</b></li>
+            <li> To do this <b>you will be required to overload at least one operator</b></li>
           </ul>
         </li>
         <li> The number of codemon an entrant has is greater than the 3rd quartile of all codemon within the zone the entrant has entered. </li>
@@ -144,6 +145,8 @@ Print out the number of total violations per zone in descending order
         <li>There should be no output to standard out except for the zones printing in descending order at the end of your program. All output will go to the output files. </li>
         <li>The input files are just text files. </li>
         <li>We will not grade on just the files given. We may have other files that we don’t show you guys for grading purposes. So you might want to generate your own files to test your code. </li>
+        <li> You are free to use whatever you have already learned in lecture</li>
+        <li><a href="https://classes.mst.edu/compsci1570/filestreams.htm">Lectures for streams</a> </li>
       </ul>
       
       
