@@ -1,0 +1,270 @@
+<!doctype html>
+<html>
+
+<!-- HEAD -->
+<head>
+
+
+ <title>Henry Wong's Page</title>
+    <link href="https://henrycwong.com/css/bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="https://henrycwong.com/css/stackicons-master/css/stackicons-social.css" rel="stylesheet" media="screen" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- code highlighting -->
+    <link rel="stylesheet"href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/monokai-sublime.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link href="https://henrycwong.com/css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="https://henrycwong.com/css/sidebar.css" rel="stylesheet" type="text/css"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://henrycwong.com/gallery/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://henrycwong.com/gallery/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://henrycwong.com/gallery/images/favicon-16x16.png">
+    <link rel="shortcut icon" href="favicon.ico" />
+        <div class="col-md-9">
+           
+            <div class="profile-content">
+            
+              <h1 style="text-align:center">Homework 1</h1>
+              <h2 style="text-align:center"> Due Date: September 10th, 2021 at 12:00pm</h2>
+              <hr border-color="black">
+            
+             <pre><code>
+#include <iostream>
+#include<cstdlib>
+using namespace std;
+
+
+const short POINTS_PER_TOURNAMENT = 10;
+const short POINTS_PER_CODEMON = 2;
+const short POINTS_FOR_ADMIT = 30;
+
+const float DONATION_STARTING_VALUE = 0.01;
+const float DONATION_BRIMFUL_RESIDENCE_BONUS = .1;
+const float DONATION_LOW_THRESHOLD      = 10000;
+const float DONATION_LOW_BONUS_PERCENT  = .05;
+const float DONATION_HIGH_THRESHOLD     = 100000;
+const float DONATION_HIGH_BONUS_PERCENT = .10;
+const float DONATION_INCOME_LOW_AMOUNT  = 200000;
+const float DONATION_INCOME_LOW_BONUS   = .10;
+const float DONATION_INCOME_HIGH_AMOUNT = 500000;
+const float DONATION_INCOME_HIGH_BONUS  = .20;
+
+const long MAX_TUITION = 100000000;
+const long MIN_TUITION = 5000000;
+const long DECIMAL_CONVERSION = 0.01;
+
+
+const float SCHOLARSHIP_PER_APPLICANT  = 100;
+const float SCHOLARSHIP_PER_TOURNAMENT = 5000;
+const float SCHOLARSHIP_BRIMFUL_BONUS = 20000;
+const float TUITION_INCREASE_INCOME = 100000;
+const float TUITION_INCREASE_AMOUNT = 20000;
+const float TUITION_DEFAULT = 3.50;
+
+const short MAX_TOURNAMENTS = 50;
+const short MIN_TOURNAMENTS = 0;
+const short MIN_CODEMON = -1;
+const short MAX_CODEMON = 30;
+const float MIN_DONATION = 100;
+const float MIN_INCOME = 30000;
+
+
+//Description: caculates the probability an applicant will donate to the academy
+//Pre: None
+//Post: return the probability the applicant will donate to the academy
+float calculateDonationProbability(bool &isOnTV, const float income, const float donatedMoney);
+
+//Description: Determines if an applicant has been admitted to the acaedmy or not.
+//Pre: None
+//Post: Returns whether the applicant will be admitted to the academy.
+bool isAdmitted(const int tournamentsWon, const float income, const int codemonOwned, const float donatedMoney, bool &isOnTV, float &score);
+
+//Description: Determines if an applicant has been admitted to the academy or not.
+//Pre: None
+//Post: Returns whether the applicant will be admitted to the academy.
+bool isAdmitted(const int tournamentsWon, const float income, const float donatedMoney, bool &isOnTV, float &score);
+
+//Description: Caluclates the tuition of a student.
+//Pre: None
+//Post: Returns the amount an applicant will have to pay if they were to come to the acaedmy.
+float calculateTuition(const int tournamentsWon, const float income, const float score,const bool isOnTV);
+
+
+int main()
+{
+
+  srand(8);
+  int tournamentsWon;
+  float income;
+  int codemonOwned;
+  float donatedMoney;
+  bool isOnTV = false;
+  float score = 0;
+  bool decision;
+  float tuition;
+  char tvAnswer;
+  cout.setf(ios::fixed);
+  cout.setf(ios::showpoint);
+  cout.precision(2);
+
+  cout << "Welcome to the Codemon Academy admission program" << endl;
+
+  do
+  {
+    cout << "How many tournaments has the applicant won? ";
+    cin >> tournamentsWon;
+  }while(tournamentsWon > MAX_TOURNAMENTS || tournamentsWon < MIN_TOURNAMENTS);
+  cout << endl;
+  do
+  {
+    cout << "How many codemon does the applicant own? ";
+    cin >> codemonOwned;
+  }while(codemonOwned > MAX_CODEMON || codemonOwned < MIN_CODEMON);
+  cout << endl;
+
+  do
+  {
+    cout << "What is the household income of the applicant? ";
+    cin >> income;
+  }while(income < MIN_INCOME);
+  cout << endl;
+
+  do
+  {
+    cout << "Where the applicant's parents in the hit 90's TV Show \"Brimful Residence\"? (y/n)";
+    cin >> tvAnswer;
+  }while(tvAnswer != 'y' &&  tvAnswer != 'n');
+  isOnTV = tvAnswer=='y'?true:false;
+  cout << endl;
+
+  do
+  {
+    cout << "How much money has this applicant paid off to the athletic director? ";
+    cin >> donatedMoney;
+  }while(donatedMoney < MIN_DONATION);
+  cout << endl;
+
+  if(codemonOwned != MIN_CODEMON)
+  {
+    decision = isAdmitted(tournamentsWon, income, codemonOwned, donatedMoney, isOnTV, score);
+  }
+  else
+  {
+    decision = isAdmitted(tournamentsWon, income, donatedMoney, isOnTV, score);
+  }
+
+  if(decision)
+  {
+    cout << "The student has been accepted with a score of: " << score  << endl;
+    tuition = calculateTuition(tournamentsWon, income, score, isOnTV);
+    cout << "The student will pay: " << tuition << endl;
+  }
+  else
+  {
+    cout << "This student has not been accepted because of a score of: " << score << endl;
+  }
+
+  return 0;
+}
+
+bool isAdmitted(const int tournamentsWon, const float income, const int codemonOwned, const float donatedMoney, bool &isOnTV, float &score)
+{
+  bool admit;
+  float donation;
+  score += (tournamentsWon * POINTS_PER_TOURNAMENT);
+  score += (codemonOwned * POINTS_PER_CODEMON);
+  donation = calculateDonationProbability(isOnTV,income,donatedMoney);
+  score += (score * donation);
+
+  if(score > POINTS_FOR_ADMIT)
+  {
+    admit = true;
+  }
+  else
+  {
+    admit = false;
+  }
+  return admit;
+}
+
+bool isAdmitted(const int tournamentsWon, const float income, const float donatedMoney, bool &isOnTV, float &score)
+{
+  score += (tournamentsWon * POINTS_PER_TOURNAMENT);
+  score += (score * calculateDonationProbability(isOnTV, income, donatedMoney));
+  return score;
+}
+
+float calculateTuition(const int tournamentsWon, const float income, const float score, const bool isOnTV)
+{
+  int intTuition = rand() % (MAX_TUITION-MIN_TUITION+1) + MIN_TUITION;
+  float tuition = intTuition * DECIMAL_CONVERSION;
+  float increase;
+  float scholarship;
+  cout << "Starting Tuition: " << tuition << endl;
+  //tuition -= score;
+  //tuition -= (tournamentsWon * 5000);
+  //tuition  = isOnTV?(tuition - 20000):tuition;
+  scholarship = (score*SCHOLARSHIP_PER_APPLICANT) + (tournamentsWon * SCHOLARSHIP_PER_TOURNAMENT) + (isOnTV?(tuition - SCHOLARSHIP_BRIMFUL_BONUS):0);
+  tuition -= scholarship;
+  cout << "Student Scholarship Total: " << scholarship << endl;
+  //cout << "tuition after tv: "  << tuition << endl;
+  increase = static_cast<int>(static_cast<int>(income) / TUITION_INCREASE_INCOME);
+  tuition += increase * TUITION_INCREASE_AMOUNT;
+  cout << "Tuition Increase: " << increase * TUITION_INCREASE_AMOUNT << endl;
+  //cout << "Tuition after : " << tuition << endl;
+
+  if(tuition <= 0)
+  {
+    tuition = TUITION_DEFAULT;
+  }
+
+  return tuition;
+
+}
+
+float calculateDonationProbability(bool &isOnTV, const float income, const float donatedMoney)
+{
+  float chance = DONATION_STARTING_VALUE;
+
+  if( income > DONATION_INCOME_LOW_AMOUNT)
+  {
+    chance += DONATION_INCOME_LOW_BONUS;
+  }
+  else if (income > DONATION_INCOME_HIGH_AMOUNT)
+  {
+    chance += DONATION_INCOME_HIGH_BONUS;
+  }
+
+  if(isOnTV)
+  {
+    chance += DONATION_BRIMFUL_RESIDENCE_BONUS;
+  }
+
+  if( income < DONATION_INCOME_HIGH_AMOUNT && isOnTV == true)
+  {
+    isOnTV = false;
+  }
+
+  if (donatedMoney >= DONATION_HIGH_THRESHOLD)
+  {
+    chance += DONATION_HIGH_BONUS_PERCENT;
+  }
+  else if (donatedMoney >= DONATION_LOW_THRESHOLD)
+  {
+    chance += DONATION_LOW_BONUS_PERCENT;
+  }
+  cout << "donation chance: " << chance << endl;
+  return chance;
+}
+
+</code></pre>
+              
+       </div>
+
+    </div>
+
+
+</body>
+
+</html>
