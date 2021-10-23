@@ -1,0 +1,195 @@
+<!doctype html>
+<html>
+
+<!-- HEAD -->
+<head>
+
+
+ <title>Henry Wong's Page</title>
+    <link href="https://henrycwong.com/css/bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="https://henrycwong.com/css/stackicons-master/css/stackicons-social.css" rel="stylesheet" media="screen" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- code highlighting -->
+    <link rel="stylesheet"href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/monokai-sublime.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    
+    <link href="../../css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../css/sidebar.css" rel="stylesheet" type="text/css"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://henrycwong.com/gallery/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://henrycwong.com/gallery/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://henrycwong.com/gallery/images/favicon-16x16.png">
+    <link rel="shortcut icon" href="favicon.ico" />
+        <div class="col-md-9">
+           
+            <div class="profile-content">
+    
+      <h1 style="text-align:center"> Homework 6</h1>
+      <h2 style="text-align:center"> Due: November 3rd, 2021 12:00pm</h2>
+      <hr border-color="black">
+       
+       <p> For this assignment, you will submit multiple C++ compilable files containing a program written in C++.  For every function, you must have the proper function documentation as well! We suggest (strongly) that you make a directory for every assignment!  Name your file a meaningful name and give it a .cpp extension since you will be compiling it. Also, make sure that you compile and run your program using the GNU (g++) compiler before submitting to make sure that it will work. </p>
+       <h2> Background </h2>
+       <p> Time flies, you all have been studying in the Codémon Academy for some time now. You have laughed so hard and also cried so much. The once strangers have now become your best friends in supporting your daily challenge of the learning and conquering of different amazing Codémons (though there are some that you are not really fond of...) Long story short, now is the time to have some fun away from the academy. And what’s better than engaging in a game to combat against your best friends and peers?! </p>
+       <h2> Progarm Spcifications </h2>
+       <p> In your program, you will create different “classes” in order to simulate the game that’s about to be described (either in this assignment or the next one).  </p>
+       <h3> Contestant Class </h3>
+       <ul>
+         <li> 
+           <b> Member Variables </b>
+           <ul>
+             <li>Each contestant should have a name</li>
+             <li>Each contestant should keep track of the number of Codémons owned  </li>
+             <li>Each contestant should carefully maintain their pocket full of Codémons
+                 <ul> <li> the maximum number of Codémons they can carry is 10 </li></ul></li>
+             <li>Each contestant should also be carrying a backpack full of useful items</li>
+             <ul><li>the maximum of items they can carry is 20  </li></ul>
+           </ul>
+         </li>
+         <li>
+           <b>Member Functions</b>
+           <ul>
+             <li>It should have a default constructor that will automatically prompt for the contestant’s name and set the number of Codémons owned to 0</li>
+             <li>It should have another constructor that accepts an argument for the name and set the number of Codémons owned to 0</li>
+             <li>It should also have a copy constructor. Why? Well so that perhaps the academy can secretly start cloning their students!</li>
+             <li>A function to update their pocket by adding a new Codémon info</li>
+             <li>A function to update their backpack by adding a new Item info</li>
+             <li>A <b>prepare()</b> function to get the contestant ready for the combat
+             <ul>
+               <li>It is to do two things: update the Codémons in the pocket and the items in the backpack 
+               <ul>
+                 <li>It should prompt the user for Codémon update one by one until the user doesn’t want to anymore or when the pocket is full; do the same for item updates</li>
+                 <li>Note: when updating a Codémon, this function should also do the same for updating the skills list of each Codémon as well from the user </li>
+               </ul>
+               </li>
+             </li>
+             <li>
+               A print() function to output all of the relevant info of the contestant nicely:
+               <pre>
+Contestant name: Andy Myers 
+Number of  Codémons owned: 2 
+Pocket list: 
+  1) Appletun 
+  2) Blissey 
+Backpack list: 
+  1) Belue Berry 
+  2) Cell Battery
+               </pre>
+             </li>
+             </ul>
+           </ul> 
+         </li>
+       </ul>
+       
+       <h3>The Codemon Class</h3>
+       <ul>
+         <li>
+           <b>Member Variables</b>
+           <ul>
+             <li>Each Codémon should have a unique name (gifted by you) </li>
+             <li>Each Codémon should have the type info that it belongs to </li>
+             <li>Each Codémon should have a corresponding level (the higher the level the stronger it is) 
+               <ul>
+                 <li>Note: the level of a Codémon can only be a multiple of 5 (e.g. 0, 5, 10, 15, … )  </li>
+               </ul>
+             </li>
+             <li>Each Codémon should have a HP (health points) reading</li>
+             <li>Each Codémon should have a list of skills that it learned and acquired 
+               <ul>
+                 <li>the maximum number of talents each Codémon can have is 6</li>
+               </ul>
+             </li>
+           </ul>
+         </li>
+         <li><b>Member Functions</b>
+           <ul>
+             <li>It should have a parameterized constructor that accepts arguments for the name, type info, level, and HP reading.</li>
+             <li>A function to update their skills list by adding a new Skill info</li>
+             <li>An evolve() function that cannot be triggered by any influence from the outside world; the Codémon has to be enlightened within 
+               <ul>
+                 <li>Upon the time of invocation (which might not happen during this assignment), it increases the level of the Codémon by 5</li>
+               </ul>
+             </li>
+             
+           </ul>
+         </li>
+       </ul>
+       
+       <h3>The Item Class</h3>
+       <ul><li><b>Member Variables</b>
+         <ul>
+           <li>Each item should have a name </li>
+           <li>Each item should have a description of its purpose  </li>
+           <li>Each item should also include the time duration of its effect once used. Be careful, some items could have a permanent effect! </li>
+         </ul>
+       </li>
+       <li><b>Member Functions</b>
+         <ul>
+           <li>It should have a parameterized constructor that accepts arguments for the name, purpose, and duration of the effect.</li>
+         </ul>
+       </li>
+       <li>
+         
+       </li>
+       </ul>
+       
+       <h3> Skills Class </h3>
+       <ul>
+         <li><b>Member Variables</b>
+           <ul>
+             <li>Each skill should have a name </li>
+             <li>Each skill should keep track of the amount of damage (base damage) that it could cause once executed </li>
+           </ul>
+         </li>
+         <li>
+           <b>Member Functions</b>
+           <ul>
+             <li>It should have a parameterized constructor that accepts arguments for the name and the base damage</li>
+           </ul>
+         </li>
+       </ul>
+       
+       <h3>Friend Functions</h3>
+       <ul>
+         <li>In this assignment, a global function called <b>skillLookUp()</b> is also needed to allow the user to search for a particular Codémon’s skill. It should also be considered as a friend function as well, but to which class(es)?
+           <ul>
+             <li>It should take just one parameter: the collection of all the contestants signed up for the combat</li>
+             <li>Within this function, it then should prompt the user for an input: the name of the skill to be looked up </li>
+             <li>Note: you can safely assume that there could be multiple Codémons possessing the same skill </li>
+             <li>If the search is successful, i.e. the skill exists among the contestants’ Codémons, then output the following message: </li>
+             <pre>
+Skill name: Bolt Strike
+		Base damage: 130
+		Acquired by: 
+			1) Magneton (Andy Myers) 
+			2) Togedemaru (Andy Myers) 
+             </pre>
+             
+     
+           </ul>
+         </li>
+         
+       </ul>
+       <h2>Program Flow</h2>
+       <p>Once all of the classes and relevant functions have been properly set up, your main program should then test their correctness in order to make sure that the actual tournament and combat can happen without any major hiccups. Some suggestions that you could try: </p>
+       <ul>
+         <li>Create a team of 3 contestants </li>
+         <li>Properly populate their info, including their Codémons, skills, and items </li>
+         <li>Print out the team info </li>
+         <li>Try looking up some skills that should exist, followed by some skills that shouldn’t exist </li>
+       </ul>
+       
+       <h2>Notes</h2>
+       <ol>
+         <li>It is your responsibility to determine whether each data member (including function) should be public or private. So think carefully in order to create a proper interface for your classes while ensuring sufficient data encapsulation.</li>
+         <li>Besides the specified data members stated in the requirements, feel free to create additional member variables and/or member functions as you see fit </li>
+       </ol>
+       
+   </div>
+
+</div>
+
+</body>
+
+</html>
