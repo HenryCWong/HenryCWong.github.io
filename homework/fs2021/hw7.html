@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+
+<!-- HEAD -->
+<head>
+
+
+ <title>Henry Wong's Page</title>
+    <link href="https://henrycwong.com/css/bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="https://henrycwong.com/css/stackicons-master/css/stackicons-social.css" rel="stylesheet" media="screen" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- code highlighting -->
+    <link rel="stylesheet"href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/monokai-sublime.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    
+    <link href="../../css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../css/sidebar.css" rel="stylesheet" type="text/css"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://henrycwong.com/gallery/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://henrycwong.com/gallery/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://henrycwong.com/gallery/images/favicon-16x16.png">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <div class="col-md-9">
+    <body>
+      <div class="profile-content">
+		  
+		  <h1 style="text-align:center"> Homework 7</h1>
+		  <h2 style="text-align:center"> Due: November 12th, 2021 12:00pm</h2>
+		  <hr border-color="black">
+		  <h3>Scenario</h3>
+		  <p>Scenario: You’ve made your classes. The contestants. The Codémon. The items. The skills. Now, we need to implement a few more things to our classes so that we can start working on our battle simulator. (This assignment involves a little RNG, so use the random seed of 11.) Here is how it will work:
+
+Each battle will be a 1v1 encounter between 2 contestants. Each contestant’s Codémon will be shuffled, and then be pitted against each other. Taking turns (starting with the coach with the louder voice), The first codemon on each player’s team that has not been sent into a coma will attack the first Codémon on their opponents team that has also not been sent into a coma. A Codémon can be described as “comatose” once their health reaches 0. To attack, a codemon will randomly select one of their skills, and deal that skill's damage to the first non-comatose Codémon in their opponent's party. Remember, a comatose pokemon cannot attack. A winner is determined as the Codémon coach who did not run out of Codémon. You will need to make the following additions to your program: 
+</p>
+		  <ol>
+			  <li>
+				  You must create a new templated class called queue. A queue is a basic ‘First In First Out’ data structure, kind of like a line at walmart. For now, this class will mainly be used to form a line of contestants looking to compete. It should have 2 private member variables, an integer to represent how many objects of type T are in the queue, and an array of no more than 100 objects of type T. It should also have the following public member functions:
+			      <ul>
+					  <li>pushBack() - add an object of type T to the back of the queue.</li>
+					  <li>popFront() - return the object at the front of the queue, and remove that object.</li>
+					  <li>peek() - return the object at the front of the queue.</li>
+				  </ul>
+			  </li>
+			  <li>
+				  Add a new member variable to your Contestant class called volume. This should be an integer between 0 and 100. The contestant with the higher volume in a fight will be the one to take their turn first. When calling your default constructor and your parameterized constructor, randomize their volume.
+			  </li>
+			  <li>
+				  Overload the * (multiplication) operator for the Contestant class. This operator will serve as the function that allows 2 contestants to “battle”. It should return a contestant, the winner of the battle. 
+			  </li>
+			  <li>
+				  Overload the + and += operators for a Contestant and a Codémon. If a Codémon is added to a Contestant, that Codémon should be added to that Contestants party, if they have not already reached the maximum number of Codémon. If they have already reached the maximum, add it to their party anyway, and immediately remove the Codémon with the lowest level from their party (pick one at random if there is a tie.)
+			  </li>
+			  <li>
+				  Overload the - and -= operators for a Contestant and a Codémon. This overload should remove a Codémon from the Contestants party. If the Codémon does not exist in the contestants party, simply output a message stating that the Codémon could not be removed as it does not exist.
+			  </li>
+			  <li>
+				  These operators (+, +=, -, and -=) must also be implemented to add an Item to a Contestant. If you try to add an item to a contestant whose backpack is full, simply do not give them the item.
+			  </li>
+			  <li>
+				  Give your Codémon class a static member variable to represent the weather. There are 5 possible weather conditions: “None”, “Sunny”, “Hail”, “Snow”, and “Rain”. Each weather condition has the following effects:
+				  <ol>
+					  <li>None: No effect</li>
+					  <li>Sunny: All damage dealt in combat is doubled.</li>
+					  <li>Hail: At the end of each player’s turn, the first 2 non-comatose Codémon for BOTH coaches lose 1/16 of their health, rounded down. (So, if player 1 goes first and it is hailing, it would go player 1 turn, then hail damage, then player 2 turn, then hail damage, etc.)</li>
+					  <li>Snow: All damage dealt in combat is halved.</li>
+					  <li>Rain: All attacks have a 50% chance to “miss” (deal 0 damage).</li>
+				  </ol>
+     		      The weather should be set randomly (each weather status has an  equal chance) when 2 Codémon coaches go into battle with each other.
+			  </li>
+			  <li>
+				  Give your Codémon class a new member variable,to represent its current health. When a Codémon object is constructed, it’s current health should be set equal to its HP.
+			  </li>
+			  <li>
+				  Overload the () operator for both your Codémon and your Contestant class to take 1 string parameter. In your Codémon class, if the parameter reads “heal”, set its current health equal to its maximum health. In your Contestant class, if the parameter reads “heal”, fully heal all of the Codémon of that contestant.
+			  </li>
+		  </ol>
+	      <p>And…. that’s it! In your main program, to make sure everything is working properly, do the following things:</p>
+		  <ul>
+			  <li>Create 2 Contestants</li>
+			  <li>Use the + and += operators to fill the contestants parties with Codémon.</li>
+			  <li>Use the - and -= operators to remove one of each of their Codémon.</li>
+			  <li>Do the same with adding items to contestants.</li>
+			  <li>Have a battle between the contestants, and output the winner of the battle.</li>
+			  <li>Heal both Contestants fully.</li>
+		  </ul>
+			
+     
+   </div>
+
+
+</body>
+
+</html>
