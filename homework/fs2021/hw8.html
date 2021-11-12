@@ -73,8 +73,8 @@
       <p>There will also be a "Game" class that will contain</p>
       <ul>
         <li>a 2d dynamically allocated array, for the size of the city</li>
-        <li>a static 2d array that contains randomly generated coordinates for the Rival for each turn</li>
-        <li>a static 2d array that contains randomly generated coordinates for the Love Interest for each turn</li>
+        <li>randomly generated coordinates for the Rival for each turn</li>
+        <li>randomly generated coordinates for the Love Interest for each turn</li>
         <li>score of the Player</li>
         <li>score of the Rival</li>
         <li>a <b>reset()</b> function</li>
@@ -84,16 +84,16 @@
         <li>a destructor</li>
       </ul>
       <p>Of course you can add classes or other functions as necessary. </p>
-      <p>The program will prompt the player for the size of the city before doing anything else. Your program will then randomly generate all coordinates for each turn, for both the Rival and the Love Interest before the first turn. Therefore, there will be an array of <i>(x,y)</i> coordinates for the Rival and an array of <i>(x,y)</i> coordinates for the Love Interest. The size of each array will be the number of turns played. Once the first turn begins, each array should be full of useful data. All the coordinates the Rival will play and all the coordinates the Love Interest will be will be all generated for all 5 turns before the game begins. </p>
-     <p>Before turn one, print out the board with numbers on both axes so the user knows what to input. The player will then choose an x coordinate directly followed by a y coordinate. After the player presses enter, the board will be printed again, but this time with the location of the Rival indicated by a 'R', the location of the Love Interest indicated by a 'L', and your location indicated by a 'P'. </p>
-     <p>Two lines indicating how many points were assigned that turn. If any entity chooses the same point, the Love Interest takes first precedence, followed by the Player, and finally the Rival. </p>
-     <p>e.g if the player and the rival choose the same point, only a 'P' will be displayed. If all entities choose the same spot, only a 'L' will be displayed.<p>
-     <p>After all has been printed, the next turn will begin and the user will have to choose a location again. </p>
-     <p>Once the game is finished, use a <b>results()</b> function to print out the results of the game. </p>
-     <p>The program will then ask if the user wants to play again and if the user wants to play in a different sized city. </p>
-     <p>If the user wants to play with a city of the same size, make a copy of the Game and clear the scores of the new copy with a <b>reset()</b> function.  When copying the Game, you should use a separate function that should be a constructor of some sort. </p>
-     <p>If the user wants to play in a different city, create a new Game. </p>
-     <p>If the user declines to continue this match or if the user has already played 20 times, print the winrate of the Player to the screen. To calculate the win rate, you will have to have a history of past cities, count the winners of each Game, and then divide that by the number of cities the match was played in. </p>
+      <p>The program will prompt the player for the size of the city before doing anything else. Your program will then randomly generate all coordinates for each turn, for both the Rival and the Love Interest before the first turn. All the coordinates the Rival will play and all the coordinates of the Love Interest will be generated for all 5 turns before the game begins. </p>
+      <p>Before turn one, print out the board with numbers on both axes so the user knows what to input. The player will then choose an x coordinate directly followed by a y coordinate. After the player presses enter, the board will be printed again, but this time with the location of the Rival indicated by a 'R', the location of the Love Interest indicated by a 'L', and your location indicated by a 'P'. </p>
+      <p>This will be followed by two lines indicating how many points were assigned that turn. If any entity chooses the same point, the Love Interest takes first precedence, followed by the Player, and finally the Rival. </p>
+      <p>e.g if the player and the rival choose the same point, only a 'P' will be displayed. If all entities choose the same spot, only a 'L' will be displayed.<p>
+      <p>After all has been printed, the next turn will begin and the user will have to choose a location again. </p>
+      <p>Once the game is finished, use a <b>results()</b> function to print out the results of the game. </p>
+      <p>The program will then ask if the user wants to play again and if the user wants to play in a different sized city. </p>
+      <p>If the user wants to play with a city of the same size, make a copy of the Game and clear the scores of the new copy with a <b>reset()</b> function.  When copying the Game, you should use a separate function that should be a constructor of some sort. </p>
+      <p>If the user wants to play in a different city, create a new Game. </p>
+      <p>If the user declines to continue this match or if the user has already played 20 times, print the winrate of the Player to the screen. To calculate the win rate, you will have to have a history of past cities, count the winners of each Game, and then divide that by the number of cities the match was played in. </p>
 
 
      <h3>Notes/Tips</h3>
