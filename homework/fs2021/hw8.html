@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+
+<!-- HEAD -->
+<head>
+
+
+ <title>Henry Wong's Page</title>
+    <link href="https://henrycwong.com/css/bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="https://henrycwong.com/css/stackicons-master/css/stackicons-social.css" rel="stylesheet" media="screen" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- code highlighting -->
+    <link rel="stylesheet"href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/monokai-sublime.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    
+    <link href="../../css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../css/sidebar.css" rel="stylesheet" type="text/css"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://henrycwong.com/gallery/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://henrycwong.com/gallery/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://henrycwong.com/gallery/images/favicon-16x16.png">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <div class="col-md-9">
+    <body>
+      <div class="profile-content">
+		  
+		  <h1 style="text-align:center"> Homework 8</h1>
+		  <h2 style="text-align:center"> Due: November 19th, 2021 12:00pm</h2>
+		  <h2 style="text-align:center"> Note: This does <b>not</b> build off any homework</h2>
+      <hr border-color="black">
+      
+      <p>You just landed your first tech job in the big city! After moving into your fancy new high rise apartment (which you can afford because you got a bouje job), you are finally ready to get a life! As time goes on you eventually find yourself fond of another human being in the city. Perhaps a neighbor, a co-worker, a friend of a friend, someone you just bumped into, or more realistically in modern times, someone you met on one of those dating sites (hinge, coffee meets bagel, match, farmersonly.com, etc.)
+      However, in the true nature of a ex-comp sci major, instead of just asking them out on a date, you write a game in an attempt to simulate the chances you have with the Love Interest over your arch nemesis in love, the Rival. 
+      </p>
+      <h3>Game Rules</h3>
+      <ul>
+        <li>The game starts out with an NxN grid that represents a city. Conveniently, all cities are exact squares (imagine a universe with good city planning).</li>
+        <li>Each turn represents a day. Each day/turn, you will choose a point in the grid and so will your rival. The objective is to choose a point closest to the Love Interest. The location of the Love Interest is concealed until the end of the turn. </li>
+        <li>
+          At the end of each turn, the point chosen by the Love Interest will be revealed. Then the distance between the points chosen and the Love Interest will be calculated. The calculated distance will be assigned as points to the respective player.
+          <ul>
+            <li>e.g If you choose point (2,3), your Rival chooses point (2,6), and the Love Interest chooses point (5,5).  3.6055 points will be assigned to you and 3.1622 points will be assigned to the Rival. </li>
+          <ul>
+        </li>
+        <li>
+          Win Condition: The person with the lowest score (between you and the Rival) after 5 turns gets a date with the Love Interest/wins.
+          <ul>
+            <li>Note: The number of turns may be subject to change.</li>
+            <li>Note: <b>One</b> date, don't push it</li>
+          <ul>
+        </li>
+      </ul>
+
+      <h3>Specifications</h3>
+      <p>The most of the game will be within a "Match" class. This class will have:<p>
+      <ul>
+        <li>an array of Games, should contain history previous games played</li>
+        <li>a <b>final_results()</b> function that will print out the win rate</li>
+        <li>a <b>play()</b> function that will initiate a game</li>
+      <ul>
+
+      <p>There will also be a "Game" class that will contain</p>
+      <ul>
+        <li>a 2d dynamically allocated array, for the size of the city</li>
+        <li>a static 2d array that contains randomly generated coordinates for the Rival for each turn</li>
+        <li>a static 2d array that contains randomly generated coordinates for the Love Interest for each turn</li>
+        <li>score of the Player</li>
+        <li>score of the Rival</li>
+        <li>a <b>reset()</b> function</li>
+        <li>a <b>results()</b> function</li>
+        <li>an overloaded &lt;&lt; operator for printing out the 2D array </li>
+        <li>whatever constructors you need</li>
+        <li>a destructor</li>
+      </ul>
+      <p>Of course you can add classes or other functions as necessary. </p>
+      <p>The program will prompt the player for the size of the city before doing anything else. Your program will then randomly generate all coordinates for each turn, for both the Rival and the Love Interest before the first turn. Therefore, there will be an array of <i>(x,y)</i> coordinates for the Rival and an array of <i>(x,y)</i> coordinates for the Love Interest. The size of each array will be the number of turns played. Once the first turn begins, each array should be full of useful data. </p>
+     <p>Before turn one, print out the board with numbers on both axes so the user knows what to input. The player will then choose an x coordinate directly followed by a y coordinate. After the player presses enter, the board will be printed again, but this time with the location of the Rival indicated by a 'R', the location of the Love Interest indicated by a 'L', and your location indicated by a 'P'. </p>
+     <p>Two lines indicating how many points were assigned that turn. If any entity chooses the same point, the Love Interest takes first precedence, followed by the Player, and finally the Rival. </p>
+     <p>e.g if the player and the rival choose the same point, only a 'P' will be displayed. If all entities choose the same spot, only a 'L' will be displayed.<p>
+     <p>After all has been printed, the next turn will begin and the user will have to choose a location again. </p>
+     <p>Once the game is finished, use a <b>results()</b> function to print out the results of the game. </p>
+     <p>The program will then ask if the user wants to play again and if the user wants to play in a different sized city. </p>
+     <p>If the user wants to play with a city of the same size, make a copy of the Game and clear the scores of the new copy with a <b>reset()</b> function.  When copying the Game, you should use a separate function that should be a constructor of some sort. </p>
+     <p>If the user wants to play in a different city, create a new Game. </p>
+     <p>If the user declines to continue this match or if the user has already played 20 times, print the winrate of the Player to the screen. To calculate the win rate, you will have to have a history of past cities, count the winners of each Game, and then divide that by the number of cities the match was played in. </p>
+
+
+     <h3>Notes/Tips</h3>
+     <ul>
+       <li>For random numbers, use a seed of 8 when you turn in the assignment. </li>
+       <li>To keep track of the history of past Games, you may want to store every single Game played inside of an array inside the Match class. </li>
+       <li>When calculating scores, do not round. </li>
+       <li>When storing pre-generated coordinates, you can use static 2D arrays. </li>
+       <li>You may need to include the cmath library to calculate the distance between 2 points.</li>
+       <li>As in tune with a true comp sci, your understanding of what gets you a date is a distance from reality. So don't actually use this for a real life reference, this is just a game, not a genie. </li>
+     </ul>
+   </div>
+   
+   <h3>Sample Output</h3>
+   <p>Note: Note: This sample is purely for formatting reference, not to compare answers to. Output format does not have to be exact, but input format does. The three dots are ellipses to indicate "stuff happened in between here" and not part of the actual output. </p>
+<pre>
+Welcome to the Love Triangle Game! Ready for some heartbreak?
+
+How big is your city?
+5
+
+Beginning Game
+
+0 |     ,     ,     ,     ,     |
+1 |     ,     ,     ,     ,     |
+2 |     ,     ,     ,     ,     |
+3 |     ,     ,     ,     ,     |
+4 |     ,     ,     ,     ,     |
+     0     1     2     3     4
+Turn 1
+_____________
+Choose a coordinate: 
+1 1
+  
+0 |     ,     ,     ,     ,     |
+1 |     ,  P  ,     ,     ,     |
+2 |     ,     ,  L  ,     ,     |
+3 |     ,     ,     ,     ,     |
+4 |     ,  R  ,     ,     ,     |
+     0     1     2     3     4
+
+Player Distance to Love Interest: 1.414213
+Rival Distance to Love Interest: 2.236067
+Player wins this turn!
+
+Turn 2
+_____________
+Player Score: 1.414213
+Rival Score: 2.236067
+
+Choose a coordinate: 
+3 4
+
+0 |     ,     ,     ,     ,     |
+1 |     ,     ,     ,     ,  L  |
+2 |     ,     ,     ,     ,     |
+3 |     ,     ,     ,     ,  R  |
+4 |     ,     ,     ,  P  ,     |
+     0     1     2     3     4
+
+Player Distance to Love Interest: 3.162277
+Rival Distance to Love Interest: 2
+Rival wins this round!
+.
+.
+.
+
+Player Total Score: 12.135968
+Rival Total Score: 9.138564
+Rival Wins! Tough Luck :( Go hit up tinder. 
+
+Do you want to continue playing (y/n)? y
+Do you want to start in a new city (y/n)? y
+Please provide the size of the new city: 3
+
+
+0 |     ,     ,     |
+1 |     ,     ,     |
+2 |     ,     ,     |
+     0     1     2 
+.
+.
+.
+
+Do you want to continue playing (y/n)? n
+Player Win Rate: 0.300000
+
+</pre>
+
+</body>
+
+</html>
