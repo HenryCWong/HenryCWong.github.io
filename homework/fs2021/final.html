@@ -1,0 +1,248 @@
+<!doctype html>
+<html>
+
+<!-- HEAD -->
+<head>
+
+
+ <title>Henry Wong's Page</title>
+    <link href="https://henrycwong.com/css/bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="https://henrycwong.com/css/stackicons-master/css/stackicons-social.css" rel="stylesheet" media="screen" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- code highlighting -->
+    <link rel="stylesheet"href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/monokai-sublime.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    
+    <link href="../../css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="../../css/sidebar.css" rel="stylesheet" type="text/css"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://henrycwong.com/gallery/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://henrycwong.com/gallery/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://henrycwong.com/gallery/images/favicon-16x16.png">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <div class="col-md-9">
+    <body>
+      <div class="profile-content">
+		  
+		  <h1 style="text-align:center"> Final Project</h1>
+		  <h2 style="text-align:center"> Due: December 3rd, 2021 12:00pm</h2>
+		  <hr border-color="black">
+      <p>
+      For this assignment, you will submit multiple C++ compilable files containing a program written in C++.  For every function, you must have the proper function documentation as well! We suggest (strongly) that you make a directory for every assignment!  Name your file a meaningful name and give it a .cpp extension since you will be compiling it. Also, make sure that you compile and run your program using the GNU (g++) compiler before submitting to make sure that it will work. 
+      
+      Note: You are allowed to work with at most one other person on this final project who needs to be in the same section as you are. Make sure to put both of your names in the header of all the C++ files. Only one of you needs to submit to GitLab. 
+
+      </p>
+      <h3>Background</h3>
+      <p>While you are working hard to try to get as many dates as possible in the big city,  a group of skillful robbers is also working hard, hoping to add more funds to their retirement accounts by deciding to rob a rich bank together1. However, during their attempt, an incident occurred and caused all of the valuable jewels in the bank to end up scattering all over the city streets. The robbers are now rushing to recollect their prize, but of course the bank alarms sounded and cops are now just showing up too. You know that an epic chase is about to happen in the city grid, and you just couldn’t resist watching it through your apartment window even though your love interest has been calling your mobile more than ten times now… 
+      </p>
+      <h3>Specifications</h3>
+      <b>City Class</b> 
+      <p>This class should have the following attribute(s):
+      <ul>
+        <li>A 2D array of type character (char) </li>
+        <li>A current count of the number of jewels scattered in the city grid
+          <ul>
+            <li>The number of jewels in the city grid is subject to be changed as police and robbers move during the chase. </li>
+          </ul>
+        </li>
+      </ul>
+      </p>
+      <b>Jewel Class</b>
+      <p>This class should have the following attributes: </p>
+      <ul>
+        <li>The value (or the worth) of the jewel </li>
+        <li>The coordinate that it was originally scattered at in the city grid </li>
+      </ul>
+      
+      <b>The Robber Class</b>
+      <p>The Robber class should be created to serve as the base class for representing a basic robber type. </p>
+      <ul>      
+        <li>A basic robber should have the following attributes: 	
+        <ul>
+          <li>The bag must be implemented in the form of a dynamic array of type <code>Jewel* (Jewel Pointer)</code> </li>
+          <li>The initial capacity of the bag is 5 items</li>
+          <li>A current count of the total worth of the jewels collected so far.</li>
+          <li>Another current count of the total worth the jewels collected by ALL the robbers so far. This should be a static variable. </li>
+          <li>A variable indicating whether the robber is still active (inactive corresponds to being arrested by the cop) </li>
+          <li>It’s very likely that you’ll need to overload the default constructor to initialize some of the data members (especially the bag). If additional constructors are needed, go for it. </li>
+          <li>If you are thinking of skipping overloading the default destructor, don’t. You definitely want to deallocate the dynamic memory of the bag properly there. </li>
+        </ul>
+        </li>
+        <li>A basic robber should have the following function(s): 
+          <ul>
+            <li>The pickUpJewel() function
+              <ul>
+                <li>Simply insert the jewel to the robber’s bag if it is not full. If the bag becomes full after the insertion, do the following: 
+                  <ul>
+                    <li>Safely expand the bag to have its current capacity doubled and make sure that none of the jewels gets lost during this process. </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        
+      </ul>
+      
+      <b>The Ordinary_Robber Class</b>
+      <ul>
+        <li>This class should be a derived class from the Robber class.</li>
+        <li>An ordinary robber should have the following function(s) added:
+          <ul>
+            <li>The move() function
+              <ul>
+              <li>This function should be used to move the robber one step in a specific direction. The direction should be determined by a random number between 0 and 7. 
+              <ul> <li>Only valid movements are allowed in this chase between the robbers and the police.  No one is allowed to move outside of the city grid border. </li> </ul>
+              </li>
+              <li>Possible scenarios after moving to the new spot: 
+                <ul>
+                  <li>You ran into your friend, another robber:
+                    <ul>
+                      <li>Nothing bad would happen. You happily greet your friend, cheerio!</li>
+                    </ul>
+                  </li>
+                  <li>You found a jewel at the new spot: 
+                    <ul>
+                      <li>Put the jewel into the bag by using the pickUpJewel() function. You should be properly recording its coordinate and estimated value</li>
+                      <li>The estimated value is computed as the summation of the grid coordinate. For instance, the value for a jewel would be $14 if it’s found at coordinate (7, 7) in the city grid. </li>
+                    </ul>
+                  </li>
+                  <li>You ran into a cop
+                    <ul>
+                      <li>Too bad, you get caught by the police and the arrest() function will be called.  Your status should then  be set to inactive and can no longer participate in the chase. </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      
+      <b>The Greedy_Robber Class</b>
+      
+      <ul>
+        <li>This class should be a derived class from the Robber class also.</li>
+        <li>A greedy robber should have the following function(s) added:
+          <ul>
+            <li>The move() function
+              <ul>
+                <li>A greedy robber still moves as an ordinary robber but comes with the following adjustments:
+                  <ul>
+                    <li>[Bonus (15 points)] When getting the random direction, the resulting direction needs to be guaranteed that it contains at least one jewel in its path (to the border of the city grid). If such a direction does not exist (i.e. the current jewel count in the city is zero) , then simply move in a random direction. </li>
+                    <li>If you bump into another robber, your overexcitement will cause half of your already collected jewels to fall out of the bag! You’ll need to redistribute the fallen jewels back to their original coordinates in the city grid. If the grid is already occupied by any entity, then choose another random location to place it at. </li>
+                    <li>A greedy robber will pick up a precious jewel, if encountered, the same way as an ordinary robber. However, if the estimated value of the jewel turns out to be an even value, then the greedy robber gets to move again! 
+                      <ul>
+                        <li>The greedy robber can only move 3 times consecutively though.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      
+      <b>The Police Class</b>
+      <ul>
+        <li>This class should have the following attributes: 
+          <ul>
+            <li>An unique police id </li>
+            <li>The current coordinate for the police’s position in the city grid</li>
+            <li>A current count of the total worth of the jewels confiscated so far  </li>
+            <li>The total number of robbers caught by the police  </li>
+          </ul>
+        </li>
+        <li>A police officer should have the following function(s): 
+          <ul>
+            <li>The arrest() function
+              <ul>
+                <li>This function is invoked whenever a robber gets caught by the police. During the arrest, the police should diligently record the worth of the confiscated jewels and update the number of robbers detained by one. </li>
+              </ul>
+            </li>
+            <li>The move() function
+              <ul>
+                <li>This function should be used to move the police one step in a specific direction, identical to that of an ordinary robber. </li>
+                <li>Possible scenarios after moving to the new spot: 
+                  <ul>
+                    <li>You ran into robber: Arrest the robber immediately!</li>
+                    <li>You found a jewel at the new spot: Return it to the bank and remove it from the city grid. </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+        
+        
+      <h3>Overall Program Flow</h3>
+      <ol>
+        <li>The simulation of the chase should begin by first creating the city grid of dimension 10 x 10. </li>
+        <li>Randomly scatter 47 jewels in the city grid and notate them with ‘J’  
+          <ul>
+            <li>A possible way to code this is for the jewels to be created dynamically whenever a robber picks one up.</li>
+          </ul>
+        </li>
+        <li>Create one police, two ordinary robbers, and two greedy robbers. Randomize their initial locations in the grid and notate them with ‘P’ and ‘R’ correspondingly.  </li>
+        <li>Print out the initial state of the city grid nicely (you might want to create a function to handle this specifically).   </li>
+        <li>Let the chase begin! Each turn consists of having the ordinary robbers move first, followed by the greedy robbers, and then the police.
+          <ul>
+            <li>Remember, a robber stops moving once they get caught. </li>
+          </ul>
+        </li>
+        <li>At the end of each turn, print out the state of the city grid nicely. </li>
+        <li>We will do a maximum of 30 turns. If the police failed to catch all the robbers in the final chase, then all the robbers get to run away freely, but the confiscated jewels should remain with the police.  
+          <ul>
+            <li>The robbers could also win if they managed to collectively pick up enough jewels with a net worth of $2022 at any point during the chase.</li>
+            <li>If this happens, then the police will release all the arrested robbers as well since the bribe is too tempting. Also, the police get to keep all the confiscated jewels too.</li>
+          </ul>
+        </li>
+        <li>When the chase terminates, print out a summary of the chase outcome. For example, the format should be:
+          <pre>
+Summary of the chase:
+		The robbers wins the chase because maximum turns (50) have been reached  
+		Police id: 1
+			Confiscated jewels amount: $512 
+			Final number of robbers caught: 0 
+		Ordinary Robber id: 1 
+			Final number of jewels picked up: 5
+			Total jewel worth: $91
+		Ordinary Robber id: 2 
+			Final number of jewels picked up: 0 
+			Total jewel worth: $0
+		Greedy Robber id: 3 
+			Final number of jewels picked up: 22
+			Total jewel worth: $750
+		Greedy Robber id: 4   
+			Final number of jewels picked up: 8
+			Total jewel worth: $240
+          </pre>
+        </li>
+      </ol>
+      
+      <h3>Notes</h3>
+      <ol>
+        <li>As a reminder, trying to get rich by robbing a bank is ALWAYS a bad idea. It is MUCH safer to just get a job as a programmer. </li>
+        <li>For all the data members in the class definitions, it is up to you to determine their proper access levels (i.e. public vs protected vs private). </li>
+        <li>It is also your sole responsibility to determine the best return types and parameters for the functions specified in this assignment. </li>
+        <li>You may create additional member attributes in the classes if proven to be helpful. Additional functions may  also be added for improving the code organization and readability.</li>
+        <li>Set the random seed to be 85 for this assignment. </li>
+        <li>When printing the city grid, if two robbers happen to be in the same cell, then simply print ‘R’. </li>
+        <li>If a robber gets arrested, then the remaining robbers can still continue the chase. </li>
+      </ol>
+		
+			
+     
+   </div>
+
+
+</body>
+
+</html>
