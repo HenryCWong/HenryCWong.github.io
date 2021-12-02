@@ -61,8 +61,14 @@
       <ul>      
         <li>A basic robber should have the following attributes: 	
         <ul>
-          <li>The bag must be implemented in the form of a dynamic array of type <code>Jewel* (Jewel Pointer)</code> </li>
-          <li>The initial capacity of the bag is 5 items</li>
+          <li>An id for each unique robber </li>
+          <li>The current coordinate for the robber’s position in the city grid</li>
+          <li>An expandable bag to hold the jewels 
+            <ul>
+              <li>The bag must be implemented in the form of a dynamic array of type <code>Jewel* (Jewel Pointer)</code> </li>
+              <li>The initial capacity of the bag is 5 items</li>
+            </ul>
+          </li>
           <li>A current count of the total worth of the jewels collected so far.</li>
           <li>Another current count of the total worth the jewels collected by ALL the robbers so far. This should be a static variable. </li>
           <li>A variable indicating whether the robber is still active (inactive corresponds to being arrested by the cop) </li>
